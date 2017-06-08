@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MJTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    MJTabBarController *tabbarController = [[MJTabBarController alloc] init];
+    self.window.rootViewController = tabbarController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
