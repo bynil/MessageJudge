@@ -30,15 +30,11 @@
     rule.blackConditionGroupList = [@[blackGroup] mutableCopy];
     
     NSUserDefaults *extDefaults = [[NSUserDefaults alloc] initWithSuiteName:MJExtentsionAppGroupName];
-    //[extDefaults removeObjectForKey:MJExtentsionRuleKey];
     NSString *ruleString = [extDefaults objectForKey:MJExtentsionRuleKey];
     ruleString = [rule yy_modelToJSONString];
     if (ruleString) {
         [extDefaults setObject:ruleString forKey:MJExtentsionRuleKey];
     }
-    rule = [MJJudgementRule yy_modelWithJSON:ruleString];
-    BOOL result = [rule isUnwantedMessageForContent:@"屏蔽短信"];
-    NSLog(result ? @"屏蔽" : @"不屏蔽");
 }
 
 

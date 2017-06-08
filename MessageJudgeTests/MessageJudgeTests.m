@@ -16,11 +16,6 @@
 @implementation MessageJudgeTests
 
 - (void)testConditionValidity {
-//    MJConditionTypeHasPrefix = 1,
-//    MJConditionTypeHasSuffix,
-//    MJConditionTypeContains,
-//    MJConditionTypeNotContains,
-//    MJConditionTypeContainsRegex,
     MJCondition *prefixCondition = [MJCondition new];
     prefixCondition.keyword = @"a special prefix";
     prefixCondition.conditionType = MJConditionTypeHasPrefix;
@@ -57,17 +52,40 @@
     XCTAssertFalse([regexCondition1 isMatchedForContent:@"www.twitter.com"], @"regex1 false test");
     
     MJCondition *regexCondition2 = [MJCondition new];
-    regexCondition2.keyword = @"^1[3|4|5|7|8][0-9]\\d{8}$"; // Phone number
+    regexCondition2.keyword = @"1[3|4|5|7|8][0-9]\\d{8}"; // Phone number
     regexCondition2.conditionType = MJConditionTypeContainsRegex;
     
-    XCTAssertTrue([regexCondition2 isMatchedForContent:@"18812345678"], @"regex12 true test");
-    XCTAssertFalse([regexCondition2 isMatchedForContent:@"021-987654321"], @"regex2 false test");
+    XCTAssertTrue([regexCondition2 isMatchedForContent:@"aaa 18812345678 bbb"], @"regex12 true test");
+    XCTAssertFalse([regexCondition2 isMatchedForContent:@"aaa 021-987654321  bbb"], @"regex2 false test");
     
-//    MJConditionGroup *blackGroup = [MJConditionGroup new];
-//    blackGroup.conditions = [@[condition] mutableCopy];
+    MJConditionGroup *conditionGroup1 = [MJConditionGroup new];
+    conditionGroup1.conditions = [@[prefixCondition, containCondition, regexCondition2] mutableCopy];
     
-//    MJJudgementRule *rule = [MJJudgementRule new];
-//    rule.blackConditionGroupList = [@[blackGroup] mutableCopy];
+    XCTAssertTrue([conditionGroup1 isMatchedForContent:@"a special prefix with xxx xxx nothing yyy zzz nothing 18812345678"]);
+    XCTAssertFalse([conditionGroup1 isMatchedForContent:@"xxx nothing yyy zzz 18812345678"]);
+    
+    MJConditionGroup *conditionGroup2 = [MJConditionGroup new];
+    conditionGroup2.conditions = [@[notContainCondition, regexCondition1] mutableCopy];
+    
+    XCTAssertTrue([conditionGroup2 isMatchedForContent:@"xxx nothing yyy zzz nothing http://www.facebook.com/"]);
+    XCTAssertFalse([conditionGroup2 isMatchedForContent:@"xxx nothing girlfriend zzz nothing http://www.facebook.com/"]);
+    
+    
+    MJJudgementRule *rule = [MJJudgementRule new];
+    rule.whiteConditionGroupList = [@[conditionGroup2] mutableCopy];
+    rule.blackConditionGroupList = [@[conditionGroup1] mutableCopy];
+    
+    NSString *unwantedString = @"a special prefix with xxx nothing girlfriend zzz nothing 18812345678";
+    XCTAssertFalse([conditionGroup2 isMatchedForContent:unwantedString]);
+    XCTAssertTrue([conditionGroup1 isMatchedForContent:unwantedString]);
+    XCTAssertTrue([rule isUnwantedMessageForContent:unwantedString]);
+    
+    NSString *wantedString = @"xxx nothing yyy zzz nothing http://www.facebook.com/";
+    XCTAssertTrue([conditionGroup2 isMatchedForContent:wantedString]);
+    XCTAssertFalse([conditionGroup1 isMatchedForContent:wantedString]);
+    XCTAssertFalse([rule isUnwantedMessageForContent:wantedString]);
+    
+    XCTAssertFalse([rule isUnwantedMessageForContent:@"aaabbb"]);
 }
 
 @end

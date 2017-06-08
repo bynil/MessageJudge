@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C21D81911EE9B7C80080F8CA /* MessageJudgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C21D81901EE9B7C80080F8CA /* MessageJudgeTests.m */; };
+		C24034FE1EE9C14900AE3122 /* MJCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E31A1EE962BB00195831 /* MJCondition.m */; };
+		C24034FF1EE9C4A500AE3122 /* MJConditionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E31D1EE9799200195831 /* MJConditionGroup.m */; };
+		C24035001EE9C4A800AE3122 /* MJJudgementRule.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E3171EE9625800195831 /* MJJudgementRule.m */; };
 		C247223B1EE934EF0092DF98 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C247223A1EE934EF0092DF98 /* AppDelegate.m */; };
 		C247223E1EE934EF0092DF98 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C247223D1EE934EF0092DF98 /* ViewController.m */; };
 		C24722411EE934EF0092DF98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C247223F1EE934EF0092DF98 /* Main.storyboard */; };
@@ -29,6 +33,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C21D81931EE9B7C80080F8CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C247222E1EE934EF0092DF98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C24722351EE934EF0092DF98;
+			remoteInfo = MessageJudge;
+		};
 		C24722591EE935230092DF98 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C247222E1EE934EF0092DF98 /* Project object */;
@@ -53,6 +64,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C21D818E1EE9B7C80080F8CA /* MessageJudgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessageJudgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C21D81901EE9B7C80080F8CA /* MessageJudgeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageJudgeTests.m; sourceTree = "<group>"; };
+		C21D81921EE9B7C80080F8CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C24722361EE934EF0092DF98 /* MessageJudge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageJudge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C24722391EE934EF0092DF98 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C247223A1EE934EF0092DF98 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -83,6 +97,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C21D818B1EE9B7C80080F8CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C24722331EE934EF0092DF98 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -100,11 +121,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C21D818F1EE9B7C80080F8CA /* MessageJudgeTests */ = {
+			isa = PBXGroup;
+			children = (
+				C21D81901EE9B7C80080F8CA /* MessageJudgeTests.m */,
+				C21D81921EE9B7C80080F8CA /* Info.plist */,
+			);
+			path = MessageJudgeTests;
+			sourceTree = "<group>";
+		};
 		C247222D1EE934EF0092DF98 = {
 			isa = PBXGroup;
 			children = (
 				C24722381EE934EF0092DF98 /* MessageJudge */,
 				C24722541EE935230092DF98 /* MessageJudgeExt */,
+				C21D818F1EE9B7C80080F8CA /* MessageJudgeTests */,
 				C24722371EE934EF0092DF98 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -114,6 +145,7 @@
 			children = (
 				C24722361EE934EF0092DF98 /* MessageJudge.app */,
 				C24722531EE935230092DF98 /* MessageJudgeExt.appex */,
+				C21D818E1EE9B7C80080F8CA /* MessageJudgeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,6 +209,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C21D818D1EE9B7C80080F8CA /* MessageJudgeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C21D81971EE9B7C80080F8CA /* Build configuration list for PBXNativeTarget "MessageJudgeTests" */;
+			buildPhases = (
+				C21D818A1EE9B7C80080F8CA /* Sources */,
+				C21D818B1EE9B7C80080F8CA /* Frameworks */,
+				C21D818C1EE9B7C80080F8CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C21D81941EE9B7C80080F8CA /* PBXTargetDependency */,
+			);
+			name = MessageJudgeTests;
+			productName = MessageJudgeTests;
+			productReference = C21D818E1EE9B7C80080F8CA /* MessageJudgeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C24722351EE934EF0092DF98 /* MessageJudge */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C247224C1EE934EF0092DF98 /* Build configuration list for PBXNativeTarget "MessageJudge" */;
@@ -222,6 +272,10 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = GeXiao;
 				TargetAttributes = {
+					C21D818D1EE9B7C80080F8CA = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = C24722351EE934EF0092DF98;
+					};
 					C24722351EE934EF0092DF98 = {
 						CreatedOnToolsVersion = 9.0;
 						SystemCapabilities = {
@@ -255,11 +309,19 @@
 			targets = (
 				C24722351EE934EF0092DF98 /* MessageJudge */,
 				C24722521EE935230092DF98 /* MessageJudgeExt */,
+				C21D818D1EE9B7C80080F8CA /* MessageJudgeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C21D818C1EE9B7C80080F8CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C24722341EE934EF0092DF98 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -280,6 +342,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C21D818A1EE9B7C80080F8CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C24034FE1EE9C14900AE3122 /* MJCondition.m in Sources */,
+				C24034FF1EE9C4A500AE3122 /* MJConditionGroup.m in Sources */,
+				C24035001EE9C4A800AE3122 /* MJJudgementRule.m in Sources */,
+				C21D81911EE9B7C80080F8CA /* MessageJudgeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C24722321EE934EF0092DF98 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,6 +385,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C21D81941EE9B7C80080F8CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C24722351EE934EF0092DF98 /* MessageJudge */;
+			targetProxy = C21D81931EE9B7C80080F8CA /* PBXContainerItemProxy */;
+		};
 		C247225A1EE935230092DF98 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C24722521EE935230092DF98 /* MessageJudgeExt */;
@@ -339,6 +417,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C21D81951EE9B7C80080F8CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 49T9LAUZ2T;
+				INFOPLIST_FILE = MessageJudgeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.gexiao.MessageJudgeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MessageJudge.app/MessageJudge";
+			};
+			name = Debug;
+		};
+		C21D81961EE9B7C80080F8CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 49T9LAUZ2T;
+				INFOPLIST_FILE = MessageJudgeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.gexiao.MessageJudgeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MessageJudge.app/MessageJudge";
+			};
+			name = Release;
+		};
 		C247224A1EE934EF0092DF98 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -502,6 +606,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C21D81971EE9B7C80080F8CA /* Build configuration list for PBXNativeTarget "MessageJudgeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C21D81951EE9B7C80080F8CA /* Debug */,
+				C21D81961EE9B7C80080F8CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C24722311EE934EF0092DF98 /* Build configuration list for PBXProject "MessageJudge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
