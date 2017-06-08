@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02E905971E5B46D00A0803AB /* libPods-MessageJudgeExt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A446DE6A683A6CC79F701EC8 /* libPods-MessageJudgeExt.a */; };
+		92A5515F9729D7849A511170 /* libPods-MessageJudge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFB7EAC5EF29A69928E13BD /* libPods-MessageJudge.a */; };
+		9B55A0B8C1F18FA156BD94D2 /* libPods-MessageJudgeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA08EF5608D603D4156095F7 /* libPods-MessageJudgeTests.a */; };
 		C21D81911EE9B7C80080F8CA /* MessageJudgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C21D81901EE9B7C80080F8CA /* MessageJudgeTests.m */; };
 		C24034FE1EE9C14900AE3122 /* MJCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E31A1EE962BB00195831 /* MJCondition.m */; };
 		C24034FF1EE9C4A500AE3122 /* MJConditionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E31D1EE9799200195831 /* MJConditionGroup.m */; };
@@ -22,10 +25,6 @@
 		C293E3181EE9625800195831 /* MJJudgementRule.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E3171EE9625800195831 /* MJJudgementRule.m */; };
 		C293E31B1EE962BB00195831 /* MJCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E31A1EE962BB00195831 /* MJCondition.m */; };
 		C293E31E1EE9799200195831 /* MJConditionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E31D1EE9799200195831 /* MJConditionGroup.m */; };
-		C293E3281EE97D5E00195831 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E3241EE97D5E00195831 /* NSObject+YYModel.m */; };
-		C293E3291EE97D5E00195831 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E3241EE97D5E00195831 /* NSObject+YYModel.m */; };
-		C293E32A1EE97D5E00195831 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E3261EE97D5E00195831 /* YYClassInfo.m */; };
-		C293E32B1EE97D5E00195831 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E3261EE97D5E00195831 /* YYClassInfo.m */; };
 		C29CF8D71EE98BB9001D5EA5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C247223D1EE934EF0092DF98 /* ViewController.m */; };
 		C2CEAA151EE98393005E9E33 /* MJJudgementRule.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E3171EE9625800195831 /* MJJudgementRule.m */; };
 		C2CEAA161EE98397005E9E33 /* MJConditionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E31D1EE9799200195831 /* MJConditionGroup.m */; };
@@ -64,6 +63,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		194404AE92DF5356DB6E383C /* Pods-MessageJudgeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageJudgeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MessageJudgeTests/Pods-MessageJudgeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		24AC430F2634549108DBF174 /* Pods-MessageJudgeExt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageJudgeExt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MessageJudgeExt/Pods-MessageJudgeExt.debug.xcconfig"; sourceTree = "<group>"; };
+		2C3B29E810D7ABD3DB9C754A /* Pods-MessageJudge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageJudge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MessageJudge/Pods-MessageJudge.debug.xcconfig"; sourceTree = "<group>"; };
+		7E6F4C471C074B968F5D7C57 /* Pods-MessageJudgeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageJudgeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MessageJudgeTests/Pods-MessageJudgeTests.release.xcconfig"; sourceTree = "<group>"; };
+		9E55E87D19FA86B45642946F /* Pods-MessageJudge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageJudge.release.xcconfig"; path = "Pods/Target Support Files/Pods-MessageJudge/Pods-MessageJudge.release.xcconfig"; sourceTree = "<group>"; };
+		A446DE6A683A6CC79F701EC8 /* libPods-MessageJudgeExt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MessageJudgeExt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA08EF5608D603D4156095F7 /* libPods-MessageJudgeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MessageJudgeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21D818E1EE9B7C80080F8CA /* MessageJudgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessageJudgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21D81901EE9B7C80080F8CA /* MessageJudgeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageJudgeTests.m; sourceTree = "<group>"; };
 		C21D81921EE9B7C80080F8CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,11 +95,8 @@
 		C293E31A1EE962BB00195831 /* MJCondition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJCondition.m; sourceTree = "<group>"; };
 		C293E31C1EE9799200195831 /* MJConditionGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJConditionGroup.h; sourceTree = "<group>"; };
 		C293E31D1EE9799200195831 /* MJConditionGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJConditionGroup.m; sourceTree = "<group>"; };
-		C293E3231EE97D5E00195831 /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
-		C293E3241EE97D5E00195831 /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
-		C293E3251EE97D5E00195831 /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
-		C293E3261EE97D5E00195831 /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
-		C293E3271EE97D5E00195831 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
+		CAEFF1AF207FD034D49CC218 /* Pods-MessageJudgeExt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageJudgeExt.release.xcconfig"; path = "Pods/Target Support Files/Pods-MessageJudgeExt/Pods-MessageJudgeExt.release.xcconfig"; sourceTree = "<group>"; };
+		CCFB7EAC5EF29A69928E13BD /* libPods-MessageJudge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MessageJudge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B55A0B8C1F18FA156BD94D2 /* libPods-MessageJudgeTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A5515F9729D7849A511170 /* libPods-MessageJudge.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,12 +120,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02E905971E5B46D00A0803AB /* libPods-MessageJudgeExt.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6322D5A1B31FB82D6A7B580C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2C3B29E810D7ABD3DB9C754A /* Pods-MessageJudge.debug.xcconfig */,
+				9E55E87D19FA86B45642946F /* Pods-MessageJudge.release.xcconfig */,
+				24AC430F2634549108DBF174 /* Pods-MessageJudgeExt.debug.xcconfig */,
+				CAEFF1AF207FD034D49CC218 /* Pods-MessageJudgeExt.release.xcconfig */,
+				194404AE92DF5356DB6E383C /* Pods-MessageJudgeTests.debug.xcconfig */,
+				7E6F4C471C074B968F5D7C57 /* Pods-MessageJudgeTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		978144A410873AC1D9EDC7AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CCFB7EAC5EF29A69928E13BD /* libPods-MessageJudge.a */,
+				A446DE6A683A6CC79F701EC8 /* libPods-MessageJudgeExt.a */,
+				BA08EF5608D603D4156095F7 /* libPods-MessageJudgeTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C21D818F1EE9B7C80080F8CA /* MessageJudgeTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +166,8 @@
 				C24722541EE935230092DF98 /* MessageJudgeExt */,
 				C21D818F1EE9B7C80080F8CA /* MessageJudgeTests */,
 				C24722371EE934EF0092DF98 /* Products */,
+				6322D5A1B31FB82D6A7B580C /* Pods */,
+				978144A410873AC1D9EDC7AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,7 +184,6 @@
 		C24722381EE934EF0092DF98 /* MessageJudge */ = {
 			isa = PBXGroup;
 			children = (
-				C293E3211EE97D3100195831 /* Vender */,
 				C24722601EE937120092DF98 /* MessageJudge.entitlements */,
 				C24722391EE934EF0092DF98 /* AppDelegate.h */,
 				C247223A1EE934EF0092DF98 /* AppDelegate.m */,
@@ -185,27 +215,6 @@
 			path = MessageJudgeExt;
 			sourceTree = "<group>";
 		};
-		C293E3211EE97D3100195831 /* Vender */ = {
-			isa = PBXGroup;
-			children = (
-				C293E3221EE97D5E00195831 /* YYModel */,
-			);
-			path = Vender;
-			sourceTree = "<group>";
-		};
-		C293E3221EE97D5E00195831 /* YYModel */ = {
-			isa = PBXGroup;
-			children = (
-				C293E3231EE97D5E00195831 /* NSObject+YYModel.h */,
-				C293E3241EE97D5E00195831 /* NSObject+YYModel.m */,
-				C293E3251EE97D5E00195831 /* YYClassInfo.h */,
-				C293E3261EE97D5E00195831 /* YYClassInfo.m */,
-				C293E3271EE97D5E00195831 /* YYModel.h */,
-			);
-			name = YYModel;
-			path = ../../../YYModel/YYModel;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -213,9 +222,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C21D81971EE9B7C80080F8CA /* Build configuration list for PBXNativeTarget "MessageJudgeTests" */;
 			buildPhases = (
+				ECFDB7DB0C734C7A4E660518 /* [CP] Check Pods Manifest.lock */,
 				C21D818A1EE9B7C80080F8CA /* Sources */,
 				C21D818B1EE9B7C80080F8CA /* Frameworks */,
 				C21D818C1EE9B7C80080F8CA /* Resources */,
+				005154BECC6244A1E99BAAD5 /* [CP] Embed Pods Frameworks */,
+				0F58557ECF292049809C644A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,10 +243,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C247224C1EE934EF0092DF98 /* Build configuration list for PBXNativeTarget "MessageJudge" */;
 			buildPhases = (
+				FA95E3DE357C7FDDFAE75D95 /* [CP] Check Pods Manifest.lock */,
 				C24722321EE934EF0092DF98 /* Sources */,
 				C24722331EE934EF0092DF98 /* Frameworks */,
 				C24722341EE934EF0092DF98 /* Resources */,
 				C247225F1EE935230092DF98 /* Embed App Extensions */,
+				B2B24DCD603E99C45F2E0352 /* [CP] Embed Pods Frameworks */,
+				D1B0EAC98F8D400DFC6BAC12 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,9 +265,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C247225C1EE935230092DF98 /* Build configuration list for PBXNativeTarget "MessageJudgeExt" */;
 			buildPhases = (
+				3517BC023D37ABD3DB663EF2 /* [CP] Check Pods Manifest.lock */,
 				C247224F1EE935230092DF98 /* Sources */,
 				C24722501EE935230092DF98 /* Frameworks */,
 				C24722511EE935230092DF98 /* Resources */,
+				BDDF6D66DC33CC4C46D3185F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -341,6 +358,129 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		005154BECC6244A1E99BAAD5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MessageJudgeTests/Pods-MessageJudgeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0F58557ECF292049809C644A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MessageJudgeTests/Pods-MessageJudgeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3517BC023D37ABD3DB663EF2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B2B24DCD603E99C45F2E0352 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MessageJudge/Pods-MessageJudge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDDF6D66DC33CC4C46D3185F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MessageJudgeExt/Pods-MessageJudgeExt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1B0EAC98F8D400DFC6BAC12 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MessageJudge/Pods-MessageJudge-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECFDB7DB0C734C7A4E660518 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FA95E3DE357C7FDDFAE75D95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C21D818A1EE9B7C80080F8CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -359,9 +499,7 @@
 			files = (
 				C247223E1EE934EF0092DF98 /* ViewController.m in Sources */,
 				C24722491EE934EF0092DF98 /* main.m in Sources */,
-				C293E3281EE97D5E00195831 /* NSObject+YYModel.m in Sources */,
 				C293E3181EE9625800195831 /* MJJudgementRule.m in Sources */,
-				C293E32A1EE97D5E00195831 /* YYClassInfo.m in Sources */,
 				C293E31B1EE962BB00195831 /* MJCondition.m in Sources */,
 				C293E31E1EE9799200195831 /* MJConditionGroup.m in Sources */,
 				C247223B1EE934EF0092DF98 /* AppDelegate.m in Sources */,
@@ -375,10 +513,8 @@
 				C29CF8D71EE98BB9001D5EA5 /* ViewController.m in Sources */,
 				C2CEAA171EE98399005E9E33 /* MJCondition.m in Sources */,
 				C24722571EE935230092DF98 /* MessageFilterExtension.m in Sources */,
-				C293E32B1EE97D5E00195831 /* YYClassInfo.m in Sources */,
 				C2CEAA151EE98393005E9E33 /* MJJudgementRule.m in Sources */,
 				C2CEAA161EE98397005E9E33 /* MJConditionGroup.m in Sources */,
-				C293E3291EE97D5E00195831 /* NSObject+YYModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +555,7 @@
 /* Begin XCBuildConfiguration section */
 		C21D81951EE9B7C80080F8CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 194404AE92DF5356DB6E383C /* Pods-MessageJudgeTests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 49T9LAUZ2T;
 				INFOPLIST_FILE = MessageJudgeTests/Info.plist;
@@ -432,6 +569,7 @@
 		};
 		C21D81961EE9B7C80080F8CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E6F4C471C074B968F5D7C57 /* Pods-MessageJudgeTests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 49T9LAUZ2T;
 				INFOPLIST_FILE = MessageJudgeTests/Info.plist;
@@ -545,6 +683,7 @@
 		};
 		C247224D1EE934EF0092DF98 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C3B29E810D7ABD3DB9C754A /* Pods-MessageJudge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MessageJudge/MessageJudge.entitlements;
@@ -560,6 +699,7 @@
 		};
 		C247224E1EE934EF0092DF98 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E55E87D19FA86B45642946F /* Pods-MessageJudge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MessageJudge/MessageJudge.entitlements;
@@ -575,6 +715,7 @@
 		};
 		C247225D1EE935230092DF98 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24AC430F2634549108DBF174 /* Pods-MessageJudgeExt.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = MessageJudgeExt/MessageJudgeExt.entitlements;
 				DEVELOPMENT_TEAM = 49T9LAUZ2T;
@@ -590,6 +731,7 @@
 		};
 		C247225E1EE935230092DF98 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAEFF1AF207FD034D49CC218 /* Pods-MessageJudgeExt.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = MessageJudgeExt/MessageJudgeExt.entitlements;
 				DEVELOPMENT_TEAM = 49T9LAUZ2T;
