@@ -8,6 +8,7 @@ target 'MessageJudge' do
   # Pods for MessageJudge
   pod 'YYModel'
   pod 'Masonry'
+  pod 'Reveal-SDK', :configurations => ['Debug']
   
   target 'MessageJudgeTests' do
     inherit! :search_paths
