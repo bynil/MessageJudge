@@ -30,6 +30,8 @@ A filter to block unwanted messages on iOS
 # Notice
 I can't release this app on App Store because iOS 11 and Xcode 9 is still in beta. So this repository is for fun and learn. Any API or documentation about the filter extension may be changed or breaking before beta testing over.
 
+Message filter extension can't access the systemwide general pasteboard.
+
 If the sender is in your contacts or you have responded to a sender three times, messages from that sender will no longer be send to extension.
 
 As Apple documentation, filter extension can send the information about messages to a server associated with app when extension can't make determination by local data and logic. I have not tested this feature because I think it's useless for most user. This function will send your message information to developer's server and may cause privacy risk.
@@ -67,6 +69,8 @@ GPL
 
 # 注意事项
 在 iOS 11 和 Xcode 9 正式版本发布之前，无法发布和 Message Filter Extension 相关的 App 到 App Store，同时相关的 API 和文档可能会有更新。所以这个项目是出于个人学习的目的，希望能有方法降低生活中骚扰短信带来的干扰。
+
+短信过滤扩展无法访问到系统全局的剪切板。
 
 如果短信发送方已经在你的联系人列表中或者你已经回复这个发送方达到三次，那么这个发送方的短信不会再被扩展进行检测和判断。
 
