@@ -10,26 +10,38 @@
 
 @implementation MJCondition
 
-- (BOOL)isMatchedForContent:(NSString *)content {
-    if (content.length < 1) {
+- (BOOL)isMatchedForRequest:(MJQueryRequest *)request {
+    NSString *target;
+    switch (self.conditionTarget) {
+        case MJConditionTargetSender:
+            target = request.sender;
+            break;
+        case MJConditionTargetContent:
+            target = request.messageBody;
+            break;
+        default:
+            target = request.messageBody;
+            break;
+    }
+    if (target.length < 1) {
         return NO;
     }
     BOOL result = NO;
     switch (self.conditionType) {
         case MJConditionTypeHasPrefix:
-            result = [content hasPrefix:self.keyword];
+            result = [target hasPrefix:self.keyword];
             break;
         case MJConditionTypeHasSuffix:
-            result = [content hasSuffix:self.keyword];
+            result = [target hasSuffix:self.keyword];
             break;
         case MJConditionTypeContains:
-            result = [content containsString:self.keyword];
+            result = [target containsString:self.keyword];
             break;
         case MJConditionTypeNotContains:
-            result = ![content containsString:self.keyword];
+            result = ![target containsString:self.keyword];
             break;
         case MJConditionTypeContainsRegex:
-            result = [content rangeOfString:self.keyword options:NSRegularExpressionSearch].location != NSNotFound;
+            result = [target rangeOfString:self.keyword options:NSRegularExpressionSearch].location != NSNotFound;
             break;
         default:
             break;

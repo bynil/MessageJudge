@@ -14,6 +14,6 @@
 @property (nonatomic, strong) NSMutableArray<MJConditionGroup *> *whiteConditionGroupList;
 @property (nonatomic, strong) NSMutableArray<MJConditionGroup *> *blackConditionGroupList;
 
-- (BOOL)isUnwantedMessageForContent:(NSString *)content;
+- (BOOL)isUnwantedMessageForSystemQueryRequest:(ILMessageFilterQueryRequest *)systemRequest;
 
 @end

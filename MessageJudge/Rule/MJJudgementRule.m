@@ -10,18 +10,20 @@
 
 @implementation MJJudgementRule
 
-- (BOOL)isUnwantedMessageForContent:(NSString *)content {
+- (BOOL)isUnwantedMessageForSystemQueryRequest:(ILMessageFilterQueryRequest *)systemRequest {
+    MJQueryRequest *request = [[MJQueryRequest alloc] initWithSystemQueryRequest:systemRequest];
+    
     // White list has higher priority
     if (self.whiteConditionGroupList) {
         for (MJConditionGroup *conditionGroup in self.whiteConditionGroupList) {
-            if ([conditionGroup isMatchedForContent:content]) {
+            if ([conditionGroup isMatchedForRequest:request]) {
                 return NO;
             }
         }
     }
     if (self.blackConditionGroupList) {
         for (MJConditionGroup *conditionGroup in self.blackConditionGroupList) {
-            if ([conditionGroup isMatchedForContent:content]) {
+            if ([conditionGroup isMatchedForRequest:request]) {
                 return YES;
             }
         }

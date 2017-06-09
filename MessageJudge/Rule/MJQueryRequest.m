@@ -19,4 +19,13 @@
     return self;
 }
 
+- (instancetype _Nonnull)initWithSender:(NSString *_Nullable)sender messageBody:(NSString *_Nullable)messageBody {
+    self = [super init];
+    if (self) {
+        _sender = sender;
+        _messageBody = messageBody;
+    }
+    return self;
+}
+
 @end

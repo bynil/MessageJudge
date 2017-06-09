@@ -66,7 +66,7 @@
     if (!rule) {
         return ILMessageFilterActionAllow;
     }
-    if ([rule isUnwantedMessageForContent:messageContent]) {
+    if ([rule isUnwantedMessageForSystemQueryRequest:queryRequest]) {
         return ILMessageFilterActionFilter;
     }
     return ILMessageFilterActionAllow;

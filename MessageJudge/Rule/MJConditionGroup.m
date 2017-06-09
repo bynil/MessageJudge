@@ -10,10 +10,10 @@
 
 @implementation MJConditionGroup
 
-- (BOOL)isMatchedForContent:(NSString *)content {
+- (BOOL)isMatchedForRequest:(MJQueryRequest *)request {
     if (self.conditions) {
         for (MJCondition *condition in self.conditions) {
-            if (![condition isMatchedForContent:content]) {
+            if (![condition isMatchedForRequest:request]) {
                 return NO;
             }
         }

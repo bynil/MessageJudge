@@ -13,6 +13,6 @@
 
 @property (nonatomic, strong) NSMutableArray<MJCondition *> *conditions;
 
-- (BOOL)isMatchedForContent:(NSString *)content;
+- (BOOL)isMatchedForRequest:(MJQueryRequest *)request;
 
 @end
