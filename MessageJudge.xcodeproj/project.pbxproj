@@ -11,6 +11,9 @@
 		92A5515F9729D7849A511170 /* libPods-MessageJudge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFB7EAC5EF29A69928E13BD /* libPods-MessageJudge.a */; };
 		9B55A0B8C1F18FA156BD94D2 /* libPods-MessageJudgeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA08EF5608D603D4156095F7 /* libPods-MessageJudgeTests.a */; };
 		C21D81911EE9B7C80080F8CA /* MessageJudgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C21D81901EE9B7C80080F8CA /* MessageJudgeTests.m */; };
+		C227FC9B1EEA87B6008B6F2F /* MJQueryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C227FC9A1EEA87B6008B6F2F /* MJQueryRequest.m */; };
+		C227FC9C1EEA87B6008B6F2F /* MJQueryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C227FC9A1EEA87B6008B6F2F /* MJQueryRequest.m */; };
+		C227FC9D1EEA87B6008B6F2F /* MJQueryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C227FC9A1EEA87B6008B6F2F /* MJQueryRequest.m */; };
 		C24034FE1EE9C14900AE3122 /* MJCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E31A1EE962BB00195831 /* MJCondition.m */; };
 		C24034FF1EE9C4A500AE3122 /* MJConditionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E31D1EE9799200195831 /* MJConditionGroup.m */; };
 		C24035001EE9C4A800AE3122 /* MJJudgementRule.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E3171EE9625800195831 /* MJJudgementRule.m */; };
@@ -74,6 +77,8 @@
 		C21D818E1EE9B7C80080F8CA /* MessageJudgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessageJudgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21D81901EE9B7C80080F8CA /* MessageJudgeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageJudgeTests.m; sourceTree = "<group>"; };
 		C21D81921EE9B7C80080F8CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C227FC991EEA87B6008B6F2F /* MJQueryRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJQueryRequest.h; sourceTree = "<group>"; };
+		C227FC9A1EEA87B6008B6F2F /* MJQueryRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJQueryRequest.m; sourceTree = "<group>"; };
 		C24722361EE934EF0092DF98 /* MessageJudge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageJudge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C24722391EE934EF0092DF98 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C247223A1EE934EF0092DF98 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -224,6 +229,8 @@
 				C293E31D1EE9799200195831 /* MJConditionGroup.m */,
 				C293E3191EE962BB00195831 /* MJCondition.h */,
 				C293E31A1EE962BB00195831 /* MJCondition.m */,
+				C227FC991EEA87B6008B6F2F /* MJQueryRequest.h */,
+				C227FC9A1EEA87B6008B6F2F /* MJQueryRequest.m */,
 			);
 			path = Rule;
 			sourceTree = "<group>";
@@ -503,6 +510,7 @@
 				C24034FF1EE9C4A500AE3122 /* MJConditionGroup.m in Sources */,
 				C24035001EE9C4A800AE3122 /* MJJudgementRule.m in Sources */,
 				C21D81911EE9B7C80080F8CA /* MessageJudgeTests.m in Sources */,
+				C227FC9D1EEA87B6008B6F2F /* MJQueryRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +519,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C247223E1EE934EF0092DF98 /* ViewController.m in Sources */,
+				C227FC9B1EEA87B6008B6F2F /* MJQueryRequest.m in Sources */,
 				C24722491EE934EF0092DF98 /* main.m in Sources */,
 				C293E3181EE9625800195831 /* MJJudgementRule.m in Sources */,
 				C293E31B1EE962BB00195831 /* MJCondition.m in Sources */,
@@ -527,6 +536,7 @@
 				C29CF8D71EE98BB9001D5EA5 /* ViewController.m in Sources */,
 				C2CEAA171EE98399005E9E33 /* MJCondition.m in Sources */,
 				C24722571EE935230092DF98 /* MessageFilterExtension.m in Sources */,
+				C227FC9C1EEA87B6008B6F2F /* MJQueryRequest.m in Sources */,
 				C2CEAA151EE98393005E9E33 /* MJJudgementRule.m in Sources */,
 				C2CEAA161EE98397005E9E33 /* MJConditionGroup.m in Sources */,
 			);
