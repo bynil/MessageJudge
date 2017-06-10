@@ -6,7 +6,7 @@ A filter to block unwanted messages on iOS
 
 # Installation
 1. Download repo and use Xcode 9.0+ to open the project.
-2. If your Apple ID is not a apple developer account, you can sign app with your personal team. Do not forget to trust your account in iPhone (Settings -> General -> Device Management -> DEVELOPER APP -> Trust xxx) after install the app first time. Notice that apps signed by free personal team  will expired and unusable in a short time(about a week), you have to rebuild and reinstall it.
+2. If your Apple ID is not an Apple developer account, you can sign app with your personal team. Do not forget to trust your account in iPhone (Settings -> General -> Device Management -> DEVELOPER APP -> Trust xxx) after install the app first time. Notice that apps signed by a free personal team will expire and unusable in a short time(about a week), you have to rebuild and reinstall it.
 3. Change bundle identifier as you like. Remember that you need to change both `MessageJudge` and `MessageJudgeExt`, switch them in project targets.
     
     For example: `me.gexiao.MessageJudge` -> `com.yourname.MessageJudge`, `me.gexiao.MessageJudge.MessageJudgeExt` -> `com.yourname.MessageJudge.MessageJudgeExt`.
@@ -18,7 +18,7 @@ A filter to block unwanted messages on iOS
     Add MessageJudgeExt in the App Group and update group name in file ViewController.h:
     `static NSString *MJExtentsionAppGroupName = @"group.com.yourname.messagejudge";`
 5. Enable switch of Settings -> Messages -> Unknown & Spam -> SMS FILTERING -> MessageJudge.
-6. Once you install and enable this extension successfully, you would see a split view in your Messages app and messages filtered is listed in right view.
+6. Once you install and enable this extension successfully, you would see a split view in your Messages app and messages filtered is listed in the right view.
     ![Messages](https://user-images.githubusercontent.com/3390634/26939798-0baa3d22-4cab-11e7-8113-9e82886804c9.PNG)
 
 
@@ -28,11 +28,11 @@ A filter to block unwanted messages on iOS
 * Extension can write down all information about messages from unknown sender and share the info with containing app, but this is forbidden in Apple's documentation for privacy reasons.
 
 # Notice
-I can't release this app on App Store because iOS 11 and Xcode 9 is still in beta. So this repository is for fun and learning. Any API or documentation about the filter extension may be changed or breaked before beta testing over.
+I can't release this app on App Store because iOS 11 and Xcode 9 is still in beta. So this repository is for fun and learning. Any API or documentation about the filter extension may be changed or broken before beta testing over.
 
 Message filter extension can't access the systemwide general pasteboard.
 
-If the sender is in your contacts or you have responded to a sender three times, messages from that sender will no longer be send to extension.
+If the sender is in your contacts or you have responded to a sender three times, messages from that sender will no longer be sent to the extension.
 
 As Apple documentation, filter extension can send the information about messages to a server associated with app when extension can't make determination by local data and logic. I have not tested this feature because I think it's useless for most user. This function will send your message information to developer's server and may cause privacy risk.
 
