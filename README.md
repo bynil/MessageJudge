@@ -28,7 +28,7 @@ A filter to block unwanted messages on iOS
 * Extension can write down all information about messages from unknown sender and share the info with containing app, but this is forbidden in Apple's documentation for privacy reasons.
 
 # Notice
-I can't release this app on App Store because iOS 11 and Xcode 9 is still in beta. So this repository is for fun and learn. Any API or documentation about the filter extension may be changed or breaking before beta testing over.
+I can't release this app on App Store because iOS 11 and Xcode 9 is still in beta. So this repository is for fun and learning. Any API or documentation about the filter extension may be changed or breaked before beta testing over.
 
 Message filter extension can't access the systemwide general pasteboard.
 
