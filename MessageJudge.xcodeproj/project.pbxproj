@@ -33,6 +33,7 @@
 		C2CEAA151EE98393005E9E33 /* MJJudgementRule.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E3171EE9625800195831 /* MJJudgementRule.m */; };
 		C2CEAA161EE98397005E9E33 /* MJConditionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E31D1EE9799200195831 /* MJConditionGroup.m */; };
 		C2CEAA171EE98399005E9E33 /* MJCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E31A1EE962BB00195831 /* MJCondition.m */; };
+		C2E6CD611EED362D00167420 /* MJGroupListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E6CD601EED362D00167420 /* MJGroupListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,8 @@
 		C293E31D1EE9799200195831 /* MJConditionGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJConditionGroup.m; sourceTree = "<group>"; };
 		C2978F8B1EE9D4AD00A57597 /* MJTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJTabBarController.h; sourceTree = "<group>"; };
 		C2978F8C1EE9D4AD00A57597 /* MJTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJTabBarController.m; sourceTree = "<group>"; };
+		C2E6CD5F1EED362D00167420 /* MJGroupListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJGroupListViewController.h; sourceTree = "<group>"; };
+		C2E6CD601EED362D00167420 /* MJGroupListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJGroupListViewController.m; sourceTree = "<group>"; };
 		CAEFF1AF207FD034D49CC218 /* Pods-MessageJudgeExt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageJudgeExt.release.xcconfig"; path = "Pods/Target Support Files/Pods-MessageJudgeExt/Pods-MessageJudgeExt.release.xcconfig"; sourceTree = "<group>"; };
 		CCFB7EAC5EF29A69928E13BD /* libPods-MessageJudge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MessageJudge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -192,6 +195,7 @@
 		C24722381EE934EF0092DF98 /* MessageJudge */ = {
 			isa = PBXGroup;
 			children = (
+				C2E6CD5C1EED35F900167420 /* Interface */,
 				C2978F8E1EE9D4B500A57597 /* Rule */,
 				C24722601EE937120092DF98 /* MessageJudge.entitlements */,
 				C24722391EE934EF0092DF98 /* AppDelegate.h */,
@@ -203,8 +207,6 @@
 				C24722441EE934EF0092DF98 /* LaunchScreen.storyboard */,
 				C24722471EE934EF0092DF98 /* Info.plist */,
 				C24722481EE934EF0092DF98 /* main.m */,
-				C2978F8B1EE9D4AD00A57597 /* MJTabBarController.h */,
-				C2978F8C1EE9D4AD00A57597 /* MJTabBarController.m */,
 			);
 			path = MessageJudge;
 			sourceTree = "<group>";
@@ -233,6 +235,33 @@
 				C227FC9A1EEA87B6008B6F2F /* MJQueryRequest.m */,
 			);
 			path = Rule;
+			sourceTree = "<group>";
+		};
+		C2E6CD5C1EED35F900167420 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				C2E6CD5E1EED361500167420 /* GroupList */,
+				C2E6CD5D1EED360B00167420 /* Tabbar */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		C2E6CD5D1EED360B00167420 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				C2978F8B1EE9D4AD00A57597 /* MJTabBarController.h */,
+				C2978F8C1EE9D4AD00A57597 /* MJTabBarController.m */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		C2E6CD5E1EED361500167420 /* GroupList */ = {
+			isa = PBXGroup;
+			children = (
+				C2E6CD5F1EED362D00167420 /* MJGroupListViewController.h */,
+				C2E6CD601EED362D00167420 /* MJGroupListViewController.m */,
+			);
+			path = GroupList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,6 +550,7 @@
 				C247223E1EE934EF0092DF98 /* ViewController.m in Sources */,
 				C227FC9B1EEA87B6008B6F2F /* MJQueryRequest.m in Sources */,
 				C24722491EE934EF0092DF98 /* main.m in Sources */,
+				C2E6CD611EED362D00167420 /* MJGroupListViewController.m in Sources */,
 				C293E3181EE9625800195831 /* MJJudgementRule.m in Sources */,
 				C293E31B1EE962BB00195831 /* MJCondition.m in Sources */,
 				C293E31E1EE9799200195831 /* MJConditionGroup.m in Sources */,
