@@ -11,6 +11,7 @@
 
 @interface MJConditionGroup : NSObject
 
+@property (nonatomic, copy) NSString *alias;
 @property (nonatomic, strong) NSMutableArray<MJCondition *> *conditions;
 
 - (BOOL)isMatchedForRequest:(MJQueryRequest *)request;

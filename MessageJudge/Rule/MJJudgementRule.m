@@ -7,8 +7,39 @@
 //
 
 #import "MJJudgementRule.h"
+#import "YYModel.h"
 
 @implementation MJJudgementRule
+
++ (instancetype)globalRule {
+    static MJJudgementRule *sharedInstance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSUserDefaults *extDefaults = [[NSUserDefaults alloc] initWithSuiteName:MJExtentsionAppGroupName];
+        NSString *ruleString = [extDefaults objectForKey:MJExtentsionRuleKey];
+        sharedInstance = [MJJudgementRule yy_modelWithJSON:ruleString];
+        if (!sharedInstance) {
+            sharedInstance = [self new];
+        }
+    });
+    return sharedInstance;
+}
+
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{
+             @"whiteConditionGroupList" : [MJConditionGroup class],
+             @"blackConditionGroupList" : [MJConditionGroup class]
+             };
+}
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _whiteConditionGroupList = [@[] mutableCopy];
+        _blackConditionGroupList = [@[] mutableCopy];
+    }
+    return self;
+}
 
 - (BOOL)isUnwantedMessageForSystemQueryRequest:(ILMessageFilterQueryRequest *)systemRequest {
     MJQueryRequest *request = [[MJQueryRequest alloc] initWithSystemQueryRequest:systemRequest];
@@ -31,11 +62,14 @@
     return NO;
 }
 
-+ (NSDictionary *)modelContainerPropertyGenericClass {
-    return @{
-             @"whiteConditionGroupList" : [MJConditionGroup class],
-             @"blackConditionGroupList" : [MJConditionGroup class]
-             };
+- (BOOL)save {
+    NSUserDefaults *extDefaults = [[NSUserDefaults alloc] initWithSuiteName:MJExtentsionAppGroupName];
+    NSString *ruleString = [extDefaults objectForKey:MJExtentsionRuleKey];
+    ruleString = [self yy_modelToJSONString];
+    if (ruleString) {
+        [extDefaults setObject:ruleString forKey:MJExtentsionRuleKey];
+    }
+    return ruleString != nil;
 }
 
 @end

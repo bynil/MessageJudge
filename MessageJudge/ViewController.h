@@ -8,11 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-// MJExtentsionAppGroupName must be same with your App Group's name
-// (Project -> Compabilities -> App Groups)
-static NSString *MJExtentsionAppGroupName = @"group.me.gexiao.messagejudge";
-static NSString *MJExtentsionRuleKey = @"MJExtentsionRuleKey";
-
 @interface ViewController : UIViewController
 
 

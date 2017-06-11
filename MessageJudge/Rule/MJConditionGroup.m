@@ -10,6 +10,18 @@
 
 @implementation MJConditionGroup
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _conditions = [@[] mutableCopy];
+    }
+    return self;
+}
+
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"conditions" : [MJCondition class]};
+}
+
 - (BOOL)isMatchedForRequest:(MJQueryRequest *)request {
     if (self.conditions) {
         for (MJCondition *condition in self.conditions) {
@@ -20,9 +32,4 @@
     }
     return YES;
 }
-
-+ (NSDictionary *)modelContainerPropertyGenericClass {
-    return @{@"conditions" : [MJCondition class]};
-}
-
 @end
