@@ -242,6 +242,17 @@
 			path = MessageJudgeExt;
 			sourceTree = "<group>";
 		};
+		C25A40A11EEDA048005D4F17 /* ConditionGroup */ = {
+			isa = PBXGroup;
+			children = (
+				C21FDFED1EED74BC006B7CCB /* MJGroupViewController.h */,
+				C21FDFEE1EED74BC006B7CCB /* MJGroupViewController.m */,
+				C21FDFF01EED77B4006B7CCB /* MJConditionCell.h */,
+				C21FDFF11EED77B4006B7CCB /* MJConditionCell.m */,
+			);
+			path = ConditionGroup;
+			sourceTree = "<group>";
+		};
 		C2978F8E1EE9D4B500A57597 /* Rule */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +271,7 @@
 		C2E6CD5C1EED35F900167420 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				C25A40A11EEDA048005D4F17 /* ConditionGroup */,
 				C2E6CD5E1EED361500167420 /* GroupList */,
 				C2E6CD5D1EED360B00167420 /* Tabbar */,
 			);
@@ -282,10 +294,6 @@
 				C2E6CD601EED362D00167420 /* MJGroupListViewController.m */,
 				C29321BA1EED433200D60C4B /* MJGroupCell.h */,
 				C29321BB1EED433200D60C4B /* MJGroupCell.m */,
-				C21FDFED1EED74BC006B7CCB /* MJGroupViewController.h */,
-				C21FDFEE1EED74BC006B7CCB /* MJGroupViewController.m */,
-				C21FDFF01EED77B4006B7CCB /* MJConditionCell.h */,
-				C21FDFF11EED77B4006B7CCB /* MJConditionCell.m */,
 			);
 			path = GroupList;
 			sourceTree = "<group>";
