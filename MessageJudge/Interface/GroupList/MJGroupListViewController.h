@@ -13,9 +13,12 @@ typedef NS_ENUM(NSInteger, MJGroupListType) {
     MJGroupListTypeBlackList,
 };
 
+@class MJConditionGroup;
+
 @interface MJGroupListViewController : UITableViewController
 
 @property (nonatomic, assign) MJGroupListType type;
+@property (nonatomic, strong, readonly) NSMutableArray<MJConditionGroup *> *groupList;
 
 - (instancetype)initWithListType:(MJGroupListType)type;
 

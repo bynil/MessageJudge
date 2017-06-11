@@ -9,3 +9,15 @@
 "Whitelist" = "白名单";
 "Blacklist" = "黑名单";
 "Menu" = "选项";
+
+"Whitelist Groups" = "白名单条件组";
+"Blacklist Groups" = "黑名单条件组";
+
+"Sender" = "发送者";
+"Content" = "内容";
+"Invalid target" = "无效目标";
+"has prefix" = "含有前缀";
+"has suffix" = "含有后缀";
+"contains" = "包含";
+"doesn't contain" = "不包含";
+"matches regex" = "匹配正则";

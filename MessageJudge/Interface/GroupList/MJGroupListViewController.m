@@ -7,6 +7,10 @@
 //
 
 #import "MJGroupListViewController.h"
+#import "MJGroupCell.h"
+#import "MJGroupViewController.h"
+#import "GlobalDefine.h"
+#import "MJJudgementRule.h"
 
 @interface MJGroupListViewController ()
 
@@ -22,9 +26,31 @@
     return self;
 }
 
+- (NSMutableArray<MJConditionGroup *> *)groupList {
+    switch (self.type) {
+        case MJGroupListTypeWhiteList:
+            return MJGlobalRule.whiteConditionGroupList;
+            break;
+        case MJGroupListTypeBlackList:
+            return MJGlobalRule.blackConditionGroupList;
+            break;
+        default:
+            return MJGlobalRule.blackConditionGroupList;
+            break;
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.tableView registerClass:MJGroupCell.class forCellReuseIdentifier:MJGroupCellReuseIdentifier];
+    switch (self.type) {
+        case MJGroupListTypeWhiteList:
+            self.title = MJLocalize(@"Whitelist Groups");
+            break;
+        case MJGroupListTypeBlackList:
+            self.title = MJLocalize(@"Blacklist Groups");
+            break;
+    }
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -32,32 +58,32 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.groupList.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    MJGroupCell *cell = [tableView dequeueReusableCellWithIdentifier:MJGroupCellReuseIdentifier forIndexPath:indexPath];
+    if (indexPath.row < self.groupList.count) {
+        [cell renderCellWithGroup:self.groupList[indexPath.row]];
+    }
     return cell;
 }
-*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.row < self.groupList.count) {
+        MJConditionGroup *group = self.groupList[indexPath.row];
+        MJGroupViewController *groupViewController = [[MJGroupViewController alloc] initWithConditionGroup:group];
+        [self.navigationController pushViewController:groupViewController animated:YES];
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.

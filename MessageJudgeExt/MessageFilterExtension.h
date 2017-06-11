@@ -7,7 +7,6 @@
 //
 
 #import <IdentityLookup/IdentityLookup.h>
-#import "ViewController.h"
 
 @interface MessageFilterExtension : ILMessageFilterExtension
 

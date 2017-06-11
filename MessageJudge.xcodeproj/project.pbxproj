@@ -13,6 +13,8 @@
 		C20FD1D61EED3DC200F14388 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C20FD1D81EED3DC200F14388 /* InfoPlist.strings */; };
 		C20FD1DB1EED3E6800F14388 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C20FD1DD1EED3E6800F14388 /* Localizable.strings */; };
 		C21D81911EE9B7C80080F8CA /* MessageJudgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C21D81901EE9B7C80080F8CA /* MessageJudgeTests.m */; };
+		C21FDFEF1EED74BC006B7CCB /* MJGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21FDFEE1EED74BC006B7CCB /* MJGroupViewController.m */; };
+		C21FDFF21EED77B4006B7CCB /* MJConditionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C21FDFF11EED77B4006B7CCB /* MJConditionCell.m */; };
 		C227FC9B1EEA87B6008B6F2F /* MJQueryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C227FC9A1EEA87B6008B6F2F /* MJQueryRequest.m */; };
 		C227FC9C1EEA87B6008B6F2F /* MJQueryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C227FC9A1EEA87B6008B6F2F /* MJQueryRequest.m */; };
 		C227FC9D1EEA87B6008B6F2F /* MJQueryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C227FC9A1EEA87B6008B6F2F /* MJQueryRequest.m */; };
@@ -20,18 +22,17 @@
 		C24034FF1EE9C4A500AE3122 /* MJConditionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E31D1EE9799200195831 /* MJConditionGroup.m */; };
 		C24035001EE9C4A800AE3122 /* MJJudgementRule.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E3171EE9625800195831 /* MJJudgementRule.m */; };
 		C247223B1EE934EF0092DF98 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C247223A1EE934EF0092DF98 /* AppDelegate.m */; };
-		C247223E1EE934EF0092DF98 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C247223D1EE934EF0092DF98 /* ViewController.m */; };
 		C24722411EE934EF0092DF98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C247223F1EE934EF0092DF98 /* Main.storyboard */; };
 		C24722431EE934EF0092DF98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C24722421EE934EF0092DF98 /* Assets.xcassets */; };
 		C24722461EE934EF0092DF98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C24722441EE934EF0092DF98 /* LaunchScreen.storyboard */; };
 		C24722491EE934EF0092DF98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C24722481EE934EF0092DF98 /* main.m */; };
 		C24722571EE935230092DF98 /* MessageFilterExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C24722561EE935230092DF98 /* MessageFilterExtension.m */; };
 		C247225B1EE935230092DF98 /* MessageJudgeExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C24722531EE935230092DF98 /* MessageJudgeExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C29321BC1EED433200D60C4B /* MJGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C29321BB1EED433200D60C4B /* MJGroupCell.m */; };
 		C293E3181EE9625800195831 /* MJJudgementRule.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E3171EE9625800195831 /* MJJudgementRule.m */; };
 		C293E31B1EE962BB00195831 /* MJCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E31A1EE962BB00195831 /* MJCondition.m */; };
 		C293E31E1EE9799200195831 /* MJConditionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E31D1EE9799200195831 /* MJConditionGroup.m */; };
 		C2978F8D1EE9D4AD00A57597 /* MJTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2978F8C1EE9D4AD00A57597 /* MJTabBarController.m */; };
-		C29CF8D71EE98BB9001D5EA5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C247223D1EE934EF0092DF98 /* ViewController.m */; };
 		C2CEAA151EE98393005E9E33 /* MJJudgementRule.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E3171EE9625800195831 /* MJJudgementRule.m */; };
 		C2CEAA161EE98397005E9E33 /* MJConditionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E31D1EE9799200195831 /* MJConditionGroup.m */; };
 		C2CEAA171EE98399005E9E33 /* MJCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E31A1EE962BB00195831 /* MJCondition.m */; };
@@ -84,13 +85,15 @@
 		C21D818E1EE9B7C80080F8CA /* MessageJudgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessageJudgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21D81901EE9B7C80080F8CA /* MessageJudgeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageJudgeTests.m; sourceTree = "<group>"; };
 		C21D81921EE9B7C80080F8CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C21FDFED1EED74BC006B7CCB /* MJGroupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJGroupViewController.h; sourceTree = "<group>"; };
+		C21FDFEE1EED74BC006B7CCB /* MJGroupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJGroupViewController.m; sourceTree = "<group>"; };
+		C21FDFF01EED77B4006B7CCB /* MJConditionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJConditionCell.h; sourceTree = "<group>"; };
+		C21FDFF11EED77B4006B7CCB /* MJConditionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJConditionCell.m; sourceTree = "<group>"; };
 		C227FC991EEA87B6008B6F2F /* MJQueryRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJQueryRequest.h; sourceTree = "<group>"; };
 		C227FC9A1EEA87B6008B6F2F /* MJQueryRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJQueryRequest.m; sourceTree = "<group>"; };
 		C24722361EE934EF0092DF98 /* MessageJudge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageJudge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C24722391EE934EF0092DF98 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C247223A1EE934EF0092DF98 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C247223C1EE934EF0092DF98 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C247223D1EE934EF0092DF98 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C24722401EE934EF0092DF98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C24722421EE934EF0092DF98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C24722451EE934EF0092DF98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,6 +105,8 @@
 		C24722581EE935230092DF98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C24722601EE937120092DF98 /* MessageJudge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MessageJudge.entitlements; sourceTree = "<group>"; };
 		C24722611EE937680092DF98 /* MessageJudgeExt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MessageJudgeExt.entitlements; sourceTree = "<group>"; };
+		C29321BA1EED433200D60C4B /* MJGroupCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJGroupCell.h; sourceTree = "<group>"; };
+		C29321BB1EED433200D60C4B /* MJGroupCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJGroupCell.m; sourceTree = "<group>"; };
 		C293E3161EE9625800195831 /* MJJudgementRule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJJudgementRule.h; sourceTree = "<group>"; };
 		C293E3171EE9625800195831 /* MJJudgementRule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJJudgementRule.m; sourceTree = "<group>"; };
 		C293E3191EE962BB00195831 /* MJCondition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJCondition.h; sourceTree = "<group>"; };
@@ -216,8 +221,6 @@
 				C24722601EE937120092DF98 /* MessageJudge.entitlements */,
 				C24722391EE934EF0092DF98 /* AppDelegate.h */,
 				C247223A1EE934EF0092DF98 /* AppDelegate.m */,
-				C247223C1EE934EF0092DF98 /* ViewController.h */,
-				C247223D1EE934EF0092DF98 /* ViewController.m */,
 				C247223F1EE934EF0092DF98 /* Main.storyboard */,
 				C24722421EE934EF0092DF98 /* Assets.xcassets */,
 				C24722441EE934EF0092DF98 /* LaunchScreen.storyboard */,
@@ -277,6 +280,12 @@
 			children = (
 				C2E6CD5F1EED362D00167420 /* MJGroupListViewController.h */,
 				C2E6CD601EED362D00167420 /* MJGroupListViewController.m */,
+				C29321BA1EED433200D60C4B /* MJGroupCell.h */,
+				C29321BB1EED433200D60C4B /* MJGroupCell.m */,
+				C21FDFED1EED74BC006B7CCB /* MJGroupViewController.h */,
+				C21FDFEE1EED74BC006B7CCB /* MJGroupViewController.m */,
+				C21FDFF01EED77B4006B7CCB /* MJConditionCell.h */,
+				C21FDFF11EED77B4006B7CCB /* MJConditionCell.m */,
 			);
 			path = GroupList;
 			sourceTree = "<group>";
@@ -566,12 +575,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C247223E1EE934EF0092DF98 /* ViewController.m in Sources */,
 				C227FC9B1EEA87B6008B6F2F /* MJQueryRequest.m in Sources */,
 				C24722491EE934EF0092DF98 /* main.m in Sources */,
 				C2E6CD611EED362D00167420 /* MJGroupListViewController.m in Sources */,
 				C293E3181EE9625800195831 /* MJJudgementRule.m in Sources */,
 				C293E31B1EE962BB00195831 /* MJCondition.m in Sources */,
+				C21FDFEF1EED74BC006B7CCB /* MJGroupViewController.m in Sources */,
+				C29321BC1EED433200D60C4B /* MJGroupCell.m in Sources */,
+				C21FDFF21EED77B4006B7CCB /* MJConditionCell.m in Sources */,
 				C293E31E1EE9799200195831 /* MJConditionGroup.m in Sources */,
 				C247223B1EE934EF0092DF98 /* AppDelegate.m in Sources */,
 				C2978F8D1EE9D4AD00A57597 /* MJTabBarController.m in Sources */,
@@ -582,7 +593,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C29CF8D71EE98BB9001D5EA5 /* ViewController.m in Sources */,
 				C2CEAA171EE98399005E9E33 /* MJCondition.m in Sources */,
 				C24722571EE935230092DF98 /* MessageFilterExtension.m in Sources */,
 				C227FC9C1EEA87B6008B6F2F /* MJQueryRequest.m in Sources */,
