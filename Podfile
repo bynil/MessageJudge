@@ -8,6 +8,7 @@ target 'MessageJudge' do
   # Pods for MessageJudge
   pod 'YYModel'
   pod 'Masonry'
+  pod 'XLForm', '~> 3.0'
   pod 'Reveal-SDK', :configurations => ['Debug']
   
   target 'MessageJudgeTests' do

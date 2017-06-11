@@ -55,6 +55,11 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
 #pragma mark - Action
 
 - (void)addNewConditionGroup {
@@ -64,7 +69,9 @@
         MJConditionGroup *newGroup = [MJConditionGroup new];
         newGroup.alias = groupAlias;
         [self.groupList addObject:newGroup];
+        [self.tableView beginUpdates];
         [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.groupList.count-1 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self.tableView endUpdates];
         [MJGlobalRule save];
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:MJLocalize(@"Cancel") style:UIAlertActionStyleCancel

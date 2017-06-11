@@ -11,8 +11,7 @@
 
 typedef NS_ENUM(NSInteger, MJConditionTarget) {
     MJConditionTargetSender = 0,
-    MJConditionTargetContent,
-    MJConditionTargetCount
+    MJConditionTargetContent
 };
 
 typedef NS_ENUM(NSInteger, MJConditionType) {
@@ -20,8 +19,7 @@ typedef NS_ENUM(NSInteger, MJConditionType) {
     MJConditionTypeHasSuffix,
     MJConditionTypeContains,
     MJConditionTypeNotContains,
-    MJConditionTypeContainsRegex,
-    MJConditionTypeCount
+    MJConditionTypeContainsRegex
 };
 
 @interface MJCondition : NSObject

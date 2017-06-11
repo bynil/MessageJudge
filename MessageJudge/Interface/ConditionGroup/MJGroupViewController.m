@@ -9,6 +9,8 @@
 #import "MJGroupViewController.h"
 #import "MJConditionGroup.h"
 #import "MJConditionCell.h"
+#import "MJConditionViewController.h"
+#import "MJJudgementRule.h"
 
 @interface MJGroupViewController ()
 
@@ -29,13 +31,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = self.conditionGroup.alias;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewCondition)];
     [self.tableView registerClass:MJConditionCell.class forCellReuseIdentifier:MJConditionCellReuseIdentifier];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 #pragma mark - Action
 - (void)addNewCondition {
-    
+    MJCondition *newCondition = [MJCondition new];
+    newCondition.conditionTarget = MJConditionTargetContent;
+    newCondition.conditionType = MJConditionTypeContains;
+    [self.conditionGroup.conditions addObject:newCondition];
+    NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:self.conditionGroup.conditions.count-1 inSection:0];
+    [self.tableView beginUpdates];
+    [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.tableView endUpdates];
+    [self tableView:self.tableView didSelectRowAtIndexPath:newIndexPath];
+    [MJGlobalRule save];
 }
 
 #pragma mark - Table view data source
@@ -57,51 +73,21 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];\
+    if (indexPath.row < self.conditionGroup.conditions.count) {
+        MJCondition *condition = self.conditionGroup.conditions[indexPath.row];
+        MJConditionViewController *controller = [[MJConditionViewController alloc] initWithCondition:condition];
+        controller.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:controller animated:YES];
+    }
 }
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.conditionGroup.conditions removeObjectAtIndex:indexPath.row];
+        [MJGlobalRule save];
+    }
+}
 
 @end

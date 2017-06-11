@@ -33,6 +33,7 @@
 		C293E31B1EE962BB00195831 /* MJCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E31A1EE962BB00195831 /* MJCondition.m */; };
 		C293E31E1EE9799200195831 /* MJConditionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E31D1EE9799200195831 /* MJConditionGroup.m */; };
 		C2978F8D1EE9D4AD00A57597 /* MJTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2978F8C1EE9D4AD00A57597 /* MJTabBarController.m */; };
+		C2A7412D1EEDB58600D8BCDF /* MJConditionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A7412C1EEDB58600D8BCDF /* MJConditionViewController.m */; };
 		C2CEAA151EE98393005E9E33 /* MJJudgementRule.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E3171EE9625800195831 /* MJJudgementRule.m */; };
 		C2CEAA161EE98397005E9E33 /* MJConditionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E31D1EE9799200195831 /* MJConditionGroup.m */; };
 		C2CEAA171EE98399005E9E33 /* MJCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = C293E31A1EE962BB00195831 /* MJCondition.m */; };
@@ -115,6 +116,8 @@
 		C293E31D1EE9799200195831 /* MJConditionGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJConditionGroup.m; sourceTree = "<group>"; };
 		C2978F8B1EE9D4AD00A57597 /* MJTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJTabBarController.h; sourceTree = "<group>"; };
 		C2978F8C1EE9D4AD00A57597 /* MJTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJTabBarController.m; sourceTree = "<group>"; };
+		C2A7412B1EEDB58600D8BCDF /* MJConditionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJConditionViewController.h; sourceTree = "<group>"; };
+		C2A7412C1EEDB58600D8BCDF /* MJConditionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJConditionViewController.m; sourceTree = "<group>"; };
 		C2E6CD5F1EED362D00167420 /* MJGroupListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJGroupListViewController.h; sourceTree = "<group>"; };
 		C2E6CD601EED362D00167420 /* MJGroupListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJGroupListViewController.m; sourceTree = "<group>"; };
 		CAEFF1AF207FD034D49CC218 /* Pods-MessageJudgeExt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageJudgeExt.release.xcconfig"; path = "Pods/Target Support Files/Pods-MessageJudgeExt/Pods-MessageJudgeExt.release.xcconfig"; sourceTree = "<group>"; };
@@ -249,6 +252,8 @@
 				C21FDFEE1EED74BC006B7CCB /* MJGroupViewController.m */,
 				C21FDFF01EED77B4006B7CCB /* MJConditionCell.h */,
 				C21FDFF11EED77B4006B7CCB /* MJConditionCell.m */,
+				C2A7412B1EEDB58600D8BCDF /* MJConditionViewController.h */,
+				C2A7412C1EEDB58600D8BCDF /* MJConditionViewController.m */,
 			);
 			path = ConditionGroup;
 			sourceTree = "<group>";
@@ -590,6 +595,7 @@
 				C293E31B1EE962BB00195831 /* MJCondition.m in Sources */,
 				C21FDFEF1EED74BC006B7CCB /* MJGroupViewController.m in Sources */,
 				C29321BC1EED433200D60C4B /* MJGroupCell.m in Sources */,
+				C2A7412D1EEDB58600D8BCDF /* MJConditionViewController.m in Sources */,
 				C21FDFF21EED77B4006B7CCB /* MJConditionCell.m in Sources */,
 				C293E31E1EE9799200195831 /* MJConditionGroup.m in Sources */,
 				C247223B1EE934EF0092DF98 /* AppDelegate.m in Sources */,
