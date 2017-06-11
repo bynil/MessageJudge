@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  MessageJudge
+
+  Created by GeXiao on 11/06/2017.
+  Copyright © 2017 GeXiao. All rights reserved.
+*/
+
+"Whitelist" = "白名单";
+"Blacklist" = "黑名单";
+"Menu" = "选项";

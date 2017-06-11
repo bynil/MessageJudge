@@ -11,6 +11,7 @@
 		92A5515F9729D7849A511170 /* libPods-MessageJudge.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFB7EAC5EF29A69928E13BD /* libPods-MessageJudge.a */; };
 		9B55A0B8C1F18FA156BD94D2 /* libPods-MessageJudgeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA08EF5608D603D4156095F7 /* libPods-MessageJudgeTests.a */; };
 		C20FD1D61EED3DC200F14388 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C20FD1D81EED3DC200F14388 /* InfoPlist.strings */; };
+		C20FD1DB1EED3E6800F14388 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C20FD1DD1EED3E6800F14388 /* Localizable.strings */; };
 		C21D81911EE9B7C80080F8CA /* MessageJudgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C21D81901EE9B7C80080F8CA /* MessageJudgeTests.m */; };
 		C227FC9B1EEA87B6008B6F2F /* MJQueryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C227FC9A1EEA87B6008B6F2F /* MJQueryRequest.m */; };
 		C227FC9C1EEA87B6008B6F2F /* MJQueryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C227FC9A1EEA87B6008B6F2F /* MJQueryRequest.m */; };
@@ -78,6 +79,8 @@
 		BA08EF5608D603D4156095F7 /* libPods-MessageJudgeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MessageJudgeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C20FD1D21EED3C6A00F14388 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		C20FD1D71EED3DC200F14388 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		C20FD1DC1EED3E6800F14388 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		C20FD1DF1EED3EE600F14388 /* GlobalDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalDefine.h; sourceTree = "<group>"; };
 		C21D818E1EE9B7C80080F8CA /* MessageJudgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessageJudgeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C21D81901EE9B7C80080F8CA /* MessageJudgeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageJudgeTests.m; sourceTree = "<group>"; };
 		C21D81921EE9B7C80080F8CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -168,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				C20FD1D81EED3DC200F14388 /* InfoPlist.strings */,
+				C20FD1DD1EED3E6800F14388 /* Localizable.strings */,
 			);
 			path = I18n;
 			sourceTree = "<group>";
@@ -219,6 +223,7 @@
 				C24722441EE934EF0092DF98 /* LaunchScreen.storyboard */,
 				C24722471EE934EF0092DF98 /* Info.plist */,
 				C24722481EE934EF0092DF98 /* main.m */,
+				C20FD1DF1EED3EE600F14388 /* GlobalDefine.h */,
 			);
 			path = MessageJudge;
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C20FD1DB1EED3E6800F14388 /* Localizable.strings in Resources */,
 				C24722461EE934EF0092DF98 /* LaunchScreen.storyboard in Resources */,
 				C20FD1D61EED3DC200F14388 /* InfoPlist.strings in Resources */,
 				C24722431EE934EF0092DF98 /* Assets.xcassets in Resources */,
@@ -607,6 +613,14 @@
 				C20FD1D71EED3DC200F14388 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C20FD1DD1EED3E6800F14388 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C20FD1DC1EED3E6800F14388 /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		C247223F1EE934EF0092DF98 /* Main.storyboard */ = {
