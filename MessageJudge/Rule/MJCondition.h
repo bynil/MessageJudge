@@ -10,16 +10,18 @@
 #import "MJQueryRequest.h"
 
 typedef NS_ENUM(NSInteger, MJConditionTarget) {
-    MJConditionTargetSender = 1,
+    MJConditionTargetSender = 0,
     MJConditionTargetContent,
+    MJConditionTargetCount
 };
 
 typedef NS_ENUM(NSInteger, MJConditionType) {
-    MJConditionTypeHasPrefix = 1,
+    MJConditionTypeHasPrefix = 0,
     MJConditionTypeHasSuffix,
     MJConditionTypeContains,
     MJConditionTypeNotContains,
     MJConditionTypeContainsRegex,
+    MJConditionTypeCount
 };
 
 @interface MJCondition : NSObject
