@@ -7,6 +7,7 @@
 //
 
 #import "MJGroupCell.h"
+#import "GlobalDefine.h"
 
 @implementation MJGroupCell
 
@@ -19,7 +20,7 @@
 
 - (void)renderCellWithGroup:(MJConditionGroup *)group {
     self.textLabel.text = group.alias;
-    self.detailTextLabel.text = [NSString stringWithFormat:@"%ld conditions", (long)group.conditions.count];
+    self.detailTextLabel.text = [NSString stringWithFormat:MJLocalize(@"%ld conditions"), (long)group.conditions.count];
 }
 
 - (void)prepareForReuse {
