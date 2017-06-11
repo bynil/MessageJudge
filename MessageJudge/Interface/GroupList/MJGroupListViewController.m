@@ -42,6 +42,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewConditionGroup)];
     [self.tableView registerClass:MJGroupCell.class forCellReuseIdentifier:MJGroupCellReuseIdentifier];
     switch (self.type) {
         case MJGroupListTypeWhiteList:
@@ -51,11 +53,26 @@
             self.title = MJLocalize(@"Blacklist Groups");
             break;
     }
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+#pragma mark - Action
+
+- (void)addNewConditionGroup {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:MJLocalize(@"New Group") message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:MJLocalize(@"OK") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSString *groupAlias = alert.textFields[0].text;
+        MJConditionGroup *newGroup = [MJConditionGroup new];
+        newGroup.alias = groupAlias;
+        [self.groupList addObject:newGroup];
+        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.groupList.count-1 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+        [MJGlobalRule save];
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:MJLocalize(@"Cancel") style:UIAlertActionStyleCancel
+                                                         handler:nil]];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = MJLocalize(@"Group Alias (Optional)");
+    }];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - Table view data source
@@ -85,48 +102,12 @@
     }
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+        [self.groupList removeObjectAtIndex:indexPath.row];
+        [MJGlobalRule save];
+    }
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

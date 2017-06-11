@@ -21,3 +21,8 @@
 "contains" = "包含";
 "doesn't contain" = "不包含";
 "matches regex" = "匹配正则";
+
+"New Group" = "新的条件组";
+"OK" = "确认";
+"Cancel" = "取消";
+"Group Alias (Optional)" = "条件组别名（可选）";
