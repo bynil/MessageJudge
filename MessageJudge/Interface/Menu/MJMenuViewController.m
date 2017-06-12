@@ -30,7 +30,7 @@ NSString *const MJMenuSourceCodeURLTag = @"MJMenuSourceCodeURLTag";
 - (void)initUI {
     XLFormDescriptor *form = [XLFormDescriptor formDescriptorWithTitle:MJLocalize(@"Menu")];
     
-    XLFormSectionDescriptor *section = [XLFormSectionDescriptor formSectionWithTitle:nil];
+    XLFormSectionDescriptor *section = [XLFormSectionDescriptor formSectionWithTitle:MJLocalize(@"Project")];
     
     XLFormRowDescriptor *usageRow = [XLFormRowDescriptor formRowDescriptorWithTag:MJMenuSourceCodeURLTag rowType:XLFormRowDescriptorTypeButton title:MJLocalize(@"Usage")];
     [usageRow.cellConfig setObject:@(NSTextAlignmentNatural) forKey:@"textLabel.textAlignment"];
