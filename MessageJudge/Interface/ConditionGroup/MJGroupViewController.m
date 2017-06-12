@@ -31,6 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.title = self.conditionGroup.alias;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewCondition)];
     [self.tableView registerClass:MJConditionCell.class forCellReuseIdentifier:MJConditionCellReuseIdentifier];

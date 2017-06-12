@@ -43,6 +43,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewConditionGroup)];
     [self.tableView registerClass:MJGroupCell.class forCellReuseIdentifier:MJGroupCellReuseIdentifier];
     switch (self.type) {
