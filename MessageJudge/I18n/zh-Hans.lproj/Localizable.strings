@@ -32,3 +32,6 @@
 "Choose message's sender or content as object that attempts to match with." = "选择信息发送者或信息内容作为将要匹配的对象。";
 "Select one match pattern." = "选择一个匹配模式。";
 "Required" = "必填";
+
+"Usage" = "使用说明";
+"Source code" = "开源代码";

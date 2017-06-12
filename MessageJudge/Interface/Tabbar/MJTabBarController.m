@@ -11,6 +11,7 @@
 #import "GlobalDefine.h"
 #import "MJJudgementRule.h"
 #import "YYModel.h"
+#import "MJMenuViewController.h"
 
 @interface MJTabBarController ()
 
@@ -32,7 +33,7 @@
     blackListNav.tabBarItem.title = MJLocalize(@"Blacklist");
     blackListNav.tabBarItem.image = [UIImage imageNamed:@"blacklist-tab"];
     
-    UIViewController *menuViewController = [UITableViewController new];
+    MJMenuViewController *menuViewController = [MJMenuViewController new];
     UINavigationController *menuNav = [[UINavigationController alloc] initWithRootViewController:menuViewController];
     menuViewController.tabBarItem.title = MJLocalize(@"Menu");
     menuViewController.tabBarItem.image = [UIImage imageNamed:@"menu-tab"];
