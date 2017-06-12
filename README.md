@@ -1,6 +1,8 @@
 # MessageJudge
 A filter to block unwanted messages on iOS
 
+[中文](#中文介绍)
+
 # Documentation
 [iOS IdentityLookup Framework](https://developer.apple.com/documentation/identitylookup)
 
@@ -21,11 +23,24 @@ A filter to block unwanted messages on iOS
 6. Once you install and enable this extension successfully, you would see a split view in your Messages app and messages filtered is listed in the right view.
     ![Messages](https://user-images.githubusercontent.com/3390634/26939798-0baa3d22-4cab-11e7-8113-9e82886804c9.PNG)
 
+# Usage
+The hole rule is divided into whitelist and blacklist; each list is composed of some condition groups with "or" relation; each condition groups is a group of some conditions with "and" relation.
+
+Whitelist has higher priority than blacklist.
+
+Logic diagram：
+
+![logic](https://user-images.githubusercontent.com/3390634/27030043-53131e96-4f9d-11e7-9ae6-d4faaa8d8e45.png)
+
+Relationship diagram：
+![rule](https://user-images.githubusercontent.com/3390634/27029302-484c4206-4f9a-11e7-8f81-5bf4fd896f23.png)
+
+![condition group](https://user-images.githubusercontent.com/3390634/27030061-64afd7ca-4f9d-11e7-8b2f-9a99b77459dd.png)
 
 # Known issues
-* A message sender may be blocked forever by system if his some messages were tagged as `Filter` by extension. It's incomprehensible and I don't know this is a bug or feature.
+* **[Important]** A message sender may be blocked forever by system if his some messages were tagged as `Filter` by extension. That is incomprehensible.
 * If a message is filtered by extension, it will don't call sound and vibration, but the unread number is still added to Messages app.
-* Extension can write down all information about messages from unknown sender and share the info with containing app, but this is forbidden in Apple's documentation for privacy reasons.
+* Extension can write down all information about messages from unknown sender and share the info with containing app, but this is forbidden in Apple's documentation for privacy reasons. Message Judge will never storage or upload any information about your messages.
 
 # Notice
 I can't release this app on App Store because iOS 11 and Xcode 9 is still in beta. So this repository is for fun and learning. Any API or documentation about the filter extension may be changed or broken before beta testing over.
@@ -37,6 +52,8 @@ If the sender is in your contacts or you have responded to a sender three times,
 As Apple documentation, filter extension can send the information about messages to a server associated with app when extension can't make determination by local data and logic. I have not tested this feature because I think it's useless for most user. This function will send your message information to developer's server and may cause privacy risk.
 
 A filter extension/containing app without network is a safer and enough choice, I think.
+
+It is recommended that you disable this extension in daily life before the incomprehensible issue being fixed.
 
 # Requirements
 iOS 11.0+ and Xcode 9.0+
@@ -62,18 +79,39 @@ GPL
 5. 打开设置里的拦截开关: 设置 -> 信息 -> 未知与垃圾信息 -> 短信过滤 -> MessageJudge.
 6. 如果你成功安装并开启了这个扩展，你会在短信里看到分栏视图，右边是被过滤掉的信息。
 
+  ![Messages](https://user-images.githubusercontent.com/3390634/26939798-0baa3d22-4cab-11e7-8113-9e82886804c9.PNG)
+
+# 使用说明
+过滤规则分为白名单和黑名单两个部分，每个具体的名单由若干条件组构成，条件组是若干个单条判断逻辑的组合。
+
+规则的条件组之间为“或者”的逻辑关系，条件组的条件之间为“并且”的逻辑关系。
+
+白名单比黑名单有更高的优先级。
+
+逻辑图：
+
+![logic](https://user-images.githubusercontent.com/3390634/27030043-53131e96-4f9d-11e7-9ae6-d4faaa8d8e45.png)
+
+关系图：
+![rule](https://user-images.githubusercontent.com/3390634/27029302-484c4206-4f9a-11e7-8f81-5bf4fd896f23.png)
+
+![condition group](https://user-images.githubusercontent.com/3390634/27030061-64afd7ca-4f9d-11e7-8b2f-9a99b77459dd.png)
+
+
 # 已知问题
-* 一个发送方的一条信息被标记为骚扰后，可能会导致这个发送方后续的消息永远被系统直接判定为骚扰。目前无法确定这是 feature 还是 bug，想不太明白。
+* **[重要]**一个发送方的一条信息被标记为骚扰后，可能会导致这个发送方后续的消息永远被系统直接判定为骚扰。这个问题非常影响使用效果。
 * 一条骚扰短信被拦截后，手机不会有提示音和震动，但这个未读数仍然会被加到短信图标上。
-* 根据 Apple 的文档，出于隐私考虑扩展无法向它的容器应用(containing app)回写数据，但实际测试可以把短信的数据共享出去。
+* 根据 Apple 的文档，出于隐私考虑扩展无法向它的容器应用(containing app)回写数据，但实际测试可以把短信的数据共享出去。即使如此，本项目也不会存储、上传任何短信的内容。
 
 # 注意事项
 在 iOS 11 和 Xcode 9 正式版本发布之前，无法发布和 Message Filter Extension 相关的 App 到 App Store，同时相关的 API 和文档可能会有更新。所以这个项目是出于个人学习的目的，希望能有方法降低生活中骚扰短信带来的干扰。
 
-短信过滤扩展无法访问到系统全局的剪切板。
+短信过滤扩展无法访问系统全局的剪切板，所以目前没有办法做到自动提取验证码。
 
 如果短信发送方已经在你的联系人列表中或者你已经回复这个发送方达到三次，那么这个发送方的短信不会再被扩展进行检测和判断。
 
 当短信过滤扩展自己无法决定是否可以标记一条信息时，它还可以向开发者的服务器请求查询，将该条短信的内容发送到服务端进行判断。我目前还没有写这个功能的相关代码也没有做过任何测试，因为我认为这个功能对于绝大多数用户来说是多余的，并且可能带来隐私问题。一个单机版的过滤扩展应该已经足够用了。
+
+建议你在那个重要的问题被修复之前不要日常开启过滤扩展。
 
 
