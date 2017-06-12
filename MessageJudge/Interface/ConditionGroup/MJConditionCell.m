@@ -43,7 +43,6 @@ static CGFloat MJConditionCellLabelRadius = 3.f;
         label.numberOfLines = 1;
         label.font = [UIFont systemFontOfSize:MJConditionCellTargetLabelFontSize];
         label.textColor = [UIColor whiteColor];
-        label.backgroundColor = RGBColor(102, 204, 102);
         label.layer.masksToBounds = true;
         label.layer.cornerRadius = MJConditionCellLabelRadius;
         label;
@@ -94,9 +93,11 @@ static CGFloat MJConditionCellLabelRadius = 3.f;
     switch (condition.conditionTarget) {
         case MJConditionTargetSender:
             self.targeLabel.text = MJLocalize(@"Sender");
+            self.targeLabel.backgroundColor = RGBColor(102, 204, 102);
             break;
         case MJConditionTargetContent:
             self.targeLabel.text = MJLocalize(@"Content");
+            self.targeLabel.backgroundColor = RGBColor(51, 153, 204);
             break;
         default:
             self.targeLabel.text = MJLocalize(@"Invalid target");

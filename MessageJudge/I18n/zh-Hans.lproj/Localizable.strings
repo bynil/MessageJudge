@@ -24,3 +24,11 @@
 "Cancel" = "取消";
 "Group Alias (Optional)" = "条件组别名（可选）";
 "%ld conditions" = "%ld 个条件";
+
+"Condition Configuration" = "条件配置";
+"Target" = "目标";
+"Pattern" = "模式";
+"Keyword" = "关键词";
+"Choose message's sender or content as object that attempts to match with." = "选择信息发送者或信息内容作为将要匹配的对象。";
+"Select one match pattern." = "选择一个匹配模式。";
+"Required" = "必填";

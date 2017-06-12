@@ -39,12 +39,13 @@ NSString *const MJKeywordTextInputTag = @"MJKeywordTextInputTag";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
+    self.title = MJLocalize(@"Condition Configuration");
 }
 
 - (void)initUI {
     XLFormDescriptor *form = [XLFormDescriptor formDescriptorWithTitle:MJLocalize(@"Condition Configuration")];
     
-    XLFormSectionDescriptor *targetSection = [XLFormSectionDescriptor formSectionWithTitle:MJLocalize(@"Condition Target")];
+    XLFormSectionDescriptor *targetSection = [XLFormSectionDescriptor formSectionWithTitle:MJLocalize(@"Target")];
     targetSection.footerTitle = MJLocalize(@"Choose message's sender or content as object that attempts to match with.");
     
     XLFormRowDescriptor *row = [XLFormRowDescriptor formRowDescriptorWithTag:MJTargetSenderCheckTag rowType:XLFormRowDescriptorTypeBooleanCheck title:MJLocalize(@"Sender")];
@@ -56,7 +57,7 @@ NSString *const MJKeywordTextInputTag = @"MJKeywordTextInputTag";
     [targetSection addFormRow:row];
     [form addFormSection:targetSection];
     
-    XLFormSectionDescriptor *typeSection = [XLFormSectionDescriptor formSectionWithTitle:MJLocalize(@"Condition Type")];
+    XLFormSectionDescriptor *typeSection = [XLFormSectionDescriptor formSectionWithTitle:MJLocalize(@"Pattern")];
     typeSection.footerTitle = MJLocalize(@"Select one match pattern.");
     
     row = [XLFormRowDescriptor formRowDescriptorWithTag:MJTypeHasPrefixCheckTag rowType:XLFormRowDescriptorTypeBooleanCheck title:MJLocalize(@"has prefix")];
@@ -91,13 +92,13 @@ NSString *const MJKeywordTextInputTag = @"MJKeywordTextInputTag";
     self.form = form;
 }
 
-- (NSDictionary<NSString *, NSString *> *)targetRowTagsRelation {
+- (NSDictionary<NSNumber *, NSString *> *)targetRowTagsRelation {
     return @{@(MJConditionTargetSender): MJTargetSenderCheckTag,
              @(MJConditionTargetContent): MJTargetContentCheckTag
              };
 }
 
-- (NSDictionary<NSString *, NSString *> *)typeRowTagsRelation {
+- (NSDictionary<NSNumber *, NSString *> *)typeRowTagsRelation {
     return @{@(MJConditionTypeHasPrefix): MJTypeHasPrefixCheckTag,
              @(MJConditionTypeHasSuffix): MJTypeHasSuffixCheckTag,
              @(MJConditionTypeContains): MJTypeContainsCheckTag,
@@ -108,11 +109,11 @@ NSString *const MJKeywordTextInputTag = @"MJKeywordTextInputTag";
 
 - (void)selectTarget:(MJConditionTarget)target {
     self.condition.conditionTarget = target;
-    static NSDictionary<NSString *, NSString *> *relation;
+    static NSDictionary<NSNumber *, NSString *> *relation;
     if (!relation) {
         relation = [self targetRowTagsRelation];
     }
-    for (NSString *key in relation) {
+    for (NSNumber *key in relation) {
         if (key.integerValue != target) {
             XLFormRowDescriptor *row =  [self.form formRowWithTag:relation[key]];
             if ([row.value boolValue]) {
@@ -124,11 +125,11 @@ NSString *const MJKeywordTextInputTag = @"MJKeywordTextInputTag";
 }
 
 - (void)selectTypeByRowTag:(NSString *)tag {
-    static NSDictionary<NSString *, NSString *> *relation;
+    static NSDictionary<NSNumber *, NSString *> *relation;
     if (!relation) {
         relation = [self typeRowTagsRelation];
     }
-    for (NSString *key in relation) {
+    for (NSNumber *key in relation) {
         if ([relation[key] isEqualToString:tag]) {
             self.condition.conditionType = key.integerValue;
         } else {
