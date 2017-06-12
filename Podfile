@@ -9,7 +9,6 @@ target 'MessageJudge' do
   pod 'YYModel'
   pod 'Masonry'
   pod 'XLForm', '~> 3.0'
-  pod 'Reveal-SDK', :configurations => ['Debug']
   
   target 'MessageJudgeTests' do
     inherit! :search_paths

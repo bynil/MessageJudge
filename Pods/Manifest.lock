@@ -1,21 +1,18 @@
 PODS:
   - Masonry (1.0.2)
-  - Reveal-SDK (8)
   - XLForm (3.3.0)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
   - Masonry
-  - Reveal-SDK
   - XLForm (~> 3.0)
   - YYModel
 
 SPEC CHECKSUMS:
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
-  Reveal-SDK: 43be4e662864e937960d0d04d005135e29c4e53b
   XLForm: d5c391dfc62865927b5bcab0a5a0dbfb3e02b0ec
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: cb2e6c455f3f05b28fdd4fbf3aad7396ab902209
+PODFILE CHECKSUM: 88f33f32e7017c21ce75deb4317e0403270289be
 
 COCOAPODS: 1.2.1
