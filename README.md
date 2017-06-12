@@ -3,6 +3,8 @@ A filter to block unwanted messages on iOS
 
 [中文](#中文介绍)
 
+![usage](https://user-images.githubusercontent.com/3390634/27032166-0e747772-4fa6-11e7-89f5-83ecb82621c0.gif)
+
 # Documentation
 [iOS IdentityLookup Framework](https://developer.apple.com/documentation/identitylookup)
 
