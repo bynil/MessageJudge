@@ -132,27 +132,43 @@ NSString *const MJKeywordTextInputTag = @"MJKeywordTextInputTag";
     for (NSNumber *key in relation) {
         if ([relation[key] isEqualToString:tag]) {
             self.condition.conditionType = key.integerValue;
-        } else {
+            break;
+        }
+    }
+    for (NSNumber *key in relation) {
+        if (![relation[key] isEqualToString:tag]) {
             XLFormRowDescriptor *row =  [self.form formRowWithTag:relation[key]];
             if ([row.value boolValue]) {
                 row.value = @(NO);
                 [self reloadFormRow:row];
             }
         }
-        
     }
 }
 
 - (void)formRowDescriptorValueHasChanged:(XLFormRowDescriptor *)formRow oldValue:(id)oldValue newValue:(id)newValue {
-    NSLog(@"%@ from %@ to %@", formRow.tag, oldValue, newValue);
-    if ([formRow.tag isEqualToString:MJTargetSenderCheckTag] && [newValue boolValue]) {
-        [self selectTarget:MJConditionTargetSender];
+    if ([formRow.tag isEqualToString:MJTargetSenderCheckTag]) {
+        if ([newValue boolValue]) {
+            [self selectTarget:MJConditionTargetSender];
+        } else if ([oldValue boolValue] && self.condition.conditionTarget == MJConditionTargetSender) {
+            [self selectTarget:MJConditionTargetSender];
+            formRow.value = @YES;
+        }
     }
-    if ([formRow.tag isEqualToString:MJTargetContentCheckTag] && [newValue boolValue]) {
-        [self selectTarget:MJConditionTargetContent];
+    if ([formRow.tag isEqualToString:MJTargetContentCheckTag]) {
+        if ([newValue boolValue]) {
+            [self selectTarget:MJConditionTargetContent];
+        } else if ([oldValue boolValue] && self.condition.conditionTarget == MJConditionTargetContent) {
+            [self selectTarget:MJConditionTargetContent];
+            formRow.value = @YES;
+        }
     }
-    if (([formRow.tag isEqualToString:MJTypeHasPrefixCheckTag] || [formRow.tag isEqualToString:MJTypeHasSuffixCheckTag] || [formRow.tag isEqualToString:MJTypeContainsCheckTag] || [formRow.tag isEqualToString:MJTypeNotContainsCheckTag] || [formRow.tag isEqualToString:MJTypeContainsRegexCheckTag]) && [newValue boolValue]) {
-        [self selectTypeByRowTag:formRow.tag];
+    if ([formRow.tag isEqualToString:MJTypeHasPrefixCheckTag] || [formRow.tag isEqualToString:MJTypeHasSuffixCheckTag] || [formRow.tag isEqualToString:MJTypeContainsCheckTag] || [formRow.tag isEqualToString:MJTypeNotContainsCheckTag] || [formRow.tag isEqualToString:MJTypeContainsRegexCheckTag]) {
+        if ([newValue boolValue]) {
+            [self selectTypeByRowTag:formRow.tag];
+        } else if ([oldValue boolValue] && [[self typeRowTagsRelation][@(self.condition.conditionType)] isEqualToString:formRow.tag]) {
+            formRow.value = @YES;
+        }
     }
     if ([formRow.tag isEqualToString:MJKeywordTextInputTag]) {
         NSString *newKeyword = formRow.value;
