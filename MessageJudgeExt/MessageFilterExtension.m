@@ -56,7 +56,6 @@
 - (ILMessageFilterAction)offlineActionForQueryRequest:(ILMessageFilterQueryRequest *)queryRequest {
     // Replace with logic to perform offline check whether to filter first (if possible).
     NSString *messageContent = queryRequest.messageBody;
-    NSLog(@"Message content:%@", messageContent);
     NSUserDefaults *extDefaults = [[NSUserDefaults alloc] initWithSuiteName:MJExtentsionAppGroupName];
     NSString *ruleString = [extDefaults objectForKey:MJExtentsionRuleKey];
     if (ruleString.length < 1) {
