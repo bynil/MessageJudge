@@ -40,8 +40,6 @@ Relationship diagram：
 ![condition group](https://user-images.githubusercontent.com/3390634/27030061-64afd7ca-4f9d-11e7-8b2f-9a99b77459dd.png)
 
 # Known issues
-* **[Important]** A message sender may be blocked forever by system if his some messages were tagged as `Filter` by extension. That is incomprehensible.
-* If a message is filtered by extension, it will don't call sound and vibration, but the unread number is still added to Messages app.
 * Extension can write down all information about messages from unknown sender and share the info with containing app, but this is forbidden in Apple's documentation for privacy reasons. Message Judge will never storage or upload any information about your messages.
 
 # Notice
@@ -49,13 +47,17 @@ I can't release this app on App Store because iOS 11 and Xcode 9 is still in bet
 
 Message filter extension can't access the systemwide general pasteboard.
 
-If the sender is in your contacts or you have responded to a sender three times, messages from that sender will no longer be sent to the extension.
+If the sender is in your contacts or you have responded to a sender three or more times, messages from this sender will no longer be sent to the extension.
 
 As Apple documentation, filter extension can send the information about messages to a server associated with app when extension can't make determination by local data and logic. I have not tested this feature because I think it's useless for most user. This function will send your message information to developer's server and may cause privacy risk.
 
 A filter extension/containing app without network is a safer and enough choice, I think.
 
-It is recommended that you disable this extension in daily life before the incomprehensible issue being fixed.
+A message sender will be marked as spam forever by system if his one message was tagged as `Filter` by extension. That is incomprehensible. But Apple has determined that it behaves as intended. Extension will mark the hole conversation instead of a single message as spam. To remove a conversation from filtered section, you can:
+
+* Respond three or more times to sender.
+* Add sender to contact.
+* Delete message conversation and new incoming messages will be sent to the extension again.
 
 # Requirements
 iOS 11.0+ and Xcode 9.0+
@@ -101,8 +103,6 @@ GPL
 
 
 # 已知问题
-* **[重要]** 一个发送方的一条信息被标记为骚扰后，可能会导致这个发送方后续的消息永远被系统直接判定为骚扰。这个问题非常影响使用效果。
-* 一条骚扰短信被拦截后，手机不会有提示音和震动，但这个未读数仍然会被加到短信图标上。
 * 根据 Apple 的文档，出于隐私考虑扩展无法向它的容器应用(containing app)回写数据，但实际测试可以把短信的数据共享出去。即使如此，本项目也不会存储、上传任何短信的内容。
 
 # 注意事项
@@ -114,6 +114,9 @@ GPL
 
 当短信过滤扩展自己无法决定是否可以标记一条信息时，它还可以向开发者的服务器请求查询，将该条短信的内容发送到服务端进行判断。我目前还没有写这个功能的相关代码也没有做过任何测试，因为我认为这个功能对于绝大多数用户来说是多余的，并且可能带来隐私问题。一个单机版的过滤扩展应该已经足够用了。
 
-建议你在那个重要的问题被修复之前不要日常开启过滤扩展。
+一个发送方的一条信息被标记为骚扰后，会导致这个发送方后续的消息永远被系统直接判定为骚扰。这个问题非常影响使用效果。Apple 回复我这是 feature，屏蔽对象是整个的 conversation 而不是单条信息。如果你想让会话被移到正常列表，你可以：
 
+* 回复这个会话至少 3 次。
+* 把发送者加到联系人里。
+* 删除会话，后续进来的短信会被再次发送到扩展进行判断。
 
