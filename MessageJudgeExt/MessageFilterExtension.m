@@ -55,6 +55,7 @@
 
 - (ILMessageFilterAction)offlineActionForQueryRequest:(ILMessageFilterQueryRequest *)queryRequest {
     // Replace with logic to perform offline check whether to filter first (if possible).
+    return ILMessageFilterActionNone;
     NSString *messageContent = queryRequest.messageBody;
     NSUserDefaults *extDefaults = [[NSUserDefaults alloc] initWithSuiteName:MJExtentsionAppGroupName];
     NSString *ruleString = [extDefaults objectForKey:MJExtentsionRuleKey];
@@ -73,7 +74,16 @@
 
 - (ILMessageFilterAction)actionForNetworkResponse:(ILNetworkResponse *)networkResponse {
     // Replace with logic to parse the HTTP response and data payload of `networkResponse` to return an action.
-    return ILMessageFilterActionNone;
+    NSError *error = nil;
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:networkResponse.data options:kNilOptions error:&error];
+    
+    if (error != nil) {
+        NSLog(@"Error parsing JSON.");
+    }
+    else {
+        NSLog(@"Dictionary: %@", jsonDict);
+    }
+    return ILMessageFilterActionAllow;
 }
 
 @end
