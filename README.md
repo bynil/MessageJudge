@@ -46,7 +46,7 @@ Message filter extension can't access the systemwide general pasteboard.
 
 If the sender is in your contacts or you have responded to a sender three or more times, messages from this sender will no longer be sent to the extension.
 
-As Apple documentation, filter extension can send the information about messages to a server associated with app when extension can't make determination by local data and logic. I have not tested this feature because I think it's useless for most user. This function will send your message information to developer's server and may cause privacy risk.
+As Apple documentation, filter extension can send the information about messages to a server associated with app when extension can't make determination by local data and logic. I think that this feature is useless for most user. This function will send your message information to developer's server and may cause privacy risk. If you are interested in the feature, you can switch branch to "server" which I demoed it.
 
 A filter extension/containing app without network is a safer and enough choice, I think.
 
@@ -105,7 +105,7 @@ GPL
 
 如果短信发送方已经在你的联系人列表中或者你已经回复这个发送方达到三次，那么这个发送方的短信不会再被扩展进行检测和判断。
 
-当短信过滤扩展自己无法决定是否可以标记一条信息时，它还可以向开发者的服务器请求查询，将该条短信的内容发送到服务端进行判断。我目前还没有写这个功能的相关代码也没有做过任何测试，因为我认为这个功能对于绝大多数用户来说是多余的，并且可能带来隐私问题。一个单机版的过滤扩展应该已经足够用了。
+当短信过滤扩展自己无法决定是否可以标记一条信息时，它还可以向开发者的服务器请求查询，将该条短信的内容发送到服务端进行判断。我认为这个功能对于绝大多数用户来说是多余的，并且可能带来隐私问题。如果你对此有兴趣，可以切换到 "server" 分支查看示例代码和配置。一个单机版的过滤扩展应该已经足够用了。
 
 一个发送方的一条信息被标记为骚扰后，会导致这个发送方后续的消息永远被系统直接判定为骚扰。这个问题非常影响使用效果。Apple 回复我这是 feature，屏蔽对象是整个的 conversation 而不是单条信息。如果你想让会话被移到正常列表，你可以：
 
