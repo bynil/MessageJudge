@@ -39,9 +39,6 @@ Relationship diagram：
 
 ![condition group](https://user-images.githubusercontent.com/3390634/27030061-64afd7ca-4f9d-11e7-8b2f-9a99b77459dd.png)
 
-# Known issues
-* Extension can write down all information about messages from unknown sender and share the info with containing app, but this is forbidden in Apple's documentation for privacy reasons. Message Judge will never storage or upload any information about your messages.
-
 # Notice
 I can't release this app on App Store because iOS 11 and Xcode 9 is still in beta. So this repository is for fun and learning. Any API or documentation about the filter extension may be changed or broken before beta testing over.
 
@@ -100,10 +97,6 @@ GPL
 ![rule](https://user-images.githubusercontent.com/3390634/27029302-484c4206-4f9a-11e7-8f81-5bf4fd896f23.png)
 
 ![condition group](https://user-images.githubusercontent.com/3390634/27030061-64afd7ca-4f9d-11e7-8b2f-9a99b77459dd.png)
-
-
-# 已知问题
-* 根据 Apple 的文档，出于隐私考虑扩展无法向它的容器应用(containing app)回写数据，但实际测试可以把短信的数据共享出去。即使如此，本项目也不会存储、上传任何短信的内容。
 
 # 注意事项
 在 iOS 11 和 Xcode 9 正式版本发布之前，无法发布和 Message Filter Extension 相关的 App 到 App Store，同时相关的 API 和文档可能会有更新。所以这个项目是出于个人学习的目的，希望能有方法降低生活中骚扰短信带来的干扰。
