@@ -10,7 +10,7 @@
 #import "GlobalDefine.h"
 
 NSString *const MJProjectHomeURL = @"https://github.com/Bynil/MessageJudge";
-NSString *const MJProjectReadmeURL = @"https://github.com/Bynil/MessageJudge/blob/master/README.md";
+NSString *const MJProjectReadmeURL = @"https://github.com/Bynil/MessageJudge/blob/master/README.md#usage";
 NSString *const MJMenuUsageURLTag = @"MJMenuUsageURLTag";
 NSString *const MJMenuSourceCodeURLTag = @"MJMenuSourceCodeURLTag";
 
