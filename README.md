@@ -1,6 +1,8 @@
 # MessageJudge
 A filter to block unwanted messages on iOS
 
+Available on App Store: [https://itunes.apple.com/app/id1284426780](https://itunes.apple.com/app/id1284426780)
+
 [中文](#中文介绍)
 
 ![usage](https://user-images.githubusercontent.com/3390634/27032166-0e747772-4fa6-11e7-89f5-83ecb82621c0.gif)
@@ -40,8 +42,6 @@ Relationship diagram：
 ![condition group](https://user-images.githubusercontent.com/3390634/27030061-64afd7ca-4f9d-11e7-8b2f-9a99b77459dd.png)
 
 # Notice
-I can't release this app on App Store because iOS 11 and Xcode 9 is still in beta. So this repository is for fun and learning. Any API or documentation about the filter extension may be changed or broken before beta testing over.
-
 Message filter extension can't access the systemwide general pasteboard.
 
 If the sender is in your contacts or you have responded to a sender three or more times, messages from this sender will no longer be sent to the extension.
@@ -64,6 +64,8 @@ GPL
 
 中文介绍
 ==========
+
+从 App Store 下载: [https://itunes.apple.com/app/id1284426780](https://itunes.apple.com/app/id1284426780)
 
 # 安装
 1. 下载并打开项目，需要 Xcode 9.0 或更高版本。
@@ -99,8 +101,6 @@ GPL
 ![condition group](https://user-images.githubusercontent.com/3390634/27030061-64afd7ca-4f9d-11e7-8b2f-9a99b77459dd.png)
 
 # 注意事项
-在 iOS 11 和 Xcode 9 正式版本发布之前，无法发布和 Message Filter Extension 相关的 App 到 App Store，同时相关的 API 和文档可能会有更新。所以这个项目是出于个人学习的目的，希望能有方法降低生活中骚扰短信带来的干扰。
-
 短信过滤扩展无法访问系统全局的剪切板，所以目前没有办法做到自动提取验证码。
 
 如果短信发送方已经在你的联系人列表中或者你已经回复这个发送方达到三次，那么这个发送方的短信不会再被扩展进行检测和判断。
