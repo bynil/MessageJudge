@@ -36,3 +36,11 @@
 "Project" = "项目";
 "Usage" = "使用说明";
 "Source code" = "开源代码";
+
+"Backup rules to iCloud" = "备份规则至 iCloud";
+"Recover rules from iCloud" = "从 iCloud 恢复规则";
+
+"Warning" = "警告";
+"Continue" = "继续";
+"This action will replace your rules existing on iCloud" = "备份操作会直接覆盖 iCloud 里已存在的规则";
+"This action will replace your local rules" = "恢复操作会直接覆盖本地的规则";

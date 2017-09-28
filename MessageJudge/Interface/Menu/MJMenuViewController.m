@@ -8,11 +8,14 @@
 
 #import "MJMenuViewController.h"
 #import "GlobalDefine.h"
+#import "MJJudgementRule.h"
 
 NSString *const MJProjectHomeURL = @"https://github.com/Bynil/MessageJudge";
 NSString *const MJProjectReadmeURL = @"https://github.com/Bynil/MessageJudge/blob/master/README.md#usage";
 NSString *const MJMenuUsageURLTag = @"MJMenuUsageURLTag";
 NSString *const MJMenuSourceCodeURLTag = @"MJMenuSourceCodeURLTag";
+NSString *const MJMenuBackupTag = @"MJMenuBackupTag";
+NSString *const MJMenuRecoverTag = @"MJMenuRecoverTag";
 
 @interface MJMenuViewController ()
 
@@ -56,7 +59,53 @@ NSString *const MJMenuSourceCodeURLTag = @"MJMenuSourceCodeURLTag";
     };
     [section addFormRow:sourceCodeRow];
     [form addFormSection:section];
+    
+    XLFormSectionDescriptor *backupSection = [XLFormSectionDescriptor formSectionWithTitle:MJLocalize(@"iCloud")];
+    
+    XLFormRowDescriptor *backupRow = [XLFormRowDescriptor formRowDescriptorWithTag:MJMenuBackupTag rowType:XLFormRowDescriptorTypeButton title:MJLocalize(@"Backup rules to iCloud")];
+    [backupRow.cellConfig setObject:@(NSTextAlignmentNatural) forKey:@"textLabel.textAlignment"];
+    
+    backupRow.action.formBlock = ^(XLFormRowDescriptor * sender){
+        [weakSelf deselectFormRow:sender];
+        [weakSelf showBackupAlert];
+    };
+    [backupSection addFormRow:backupRow];
+    
+    XLFormRowDescriptor *recoverRow = [XLFormRowDescriptor formRowDescriptorWithTag:MJMenuRecoverTag rowType:XLFormRowDescriptorTypeButton title:MJLocalize(@"Recover rules from iCloud")];
+    [recoverRow.cellConfig setObject:@(NSTextAlignmentNatural) forKey:@"textLabel.textAlignment"];
+    
+    recoverRow.action.formBlock = ^(XLFormRowDescriptor * sender){
+        [weakSelf deselectFormRow:sender];
+        [weakSelf showRecoverAlert];
+    };
+    [backupSection addFormRow:recoverRow];
+    [form addFormSection:backupSection];
+    
     self.form = form;
+}
+
+- (void)showBackupAlert {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:MJLocalize(@"Warning") message:MJLocalize(@"This action will replace your rules existing on iCloud") preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:MJLocalize(@"Continue") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [MJGlobalRule backupRuleToIcloud];
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:MJLocalize(@"Cancel") style:UIAlertActionStyleCancel handler:nil];
+    [alertController addAction:cancelAction];
+    [alertController addAction:okAction];
+    [self.tabBarController presentViewController:alertController animated:true completion:nil];
+}
+
+- (void)showRecoverAlert {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:MJLocalize(@"Warning") message:MJLocalize(@"This action will replace your local rules") preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:MJLocalize(@"Continue") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if ([MJGlobalRule syncRuleFromIcloud]) {
+            [MJJudgementRule regenerateShareInstance];
+        }
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:MJLocalize(@"Cancel") style:UIAlertActionStyleCancel handler:nil];
+    [alertController addAction:cancelAction];
+    [alertController addAction:okAction];
+    [self.tabBarController presentViewController:alertController animated:true completion:nil];
 }
 
 @end

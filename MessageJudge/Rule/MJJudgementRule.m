@@ -9,10 +9,11 @@
 #import "MJJudgementRule.h"
 #import "YYModel.h"
 
+static MJJudgementRule *sharedInstance;
+
 @implementation MJJudgementRule
 
 + (instancetype)globalRule {
-    static MJJudgementRule *sharedInstance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         NSUserDefaults *extDefaults = [[NSUserDefaults alloc] initWithSuiteName:MJExtentsionAppGroupName];
@@ -23,6 +24,15 @@
         }
     });
     return sharedInstance;
+}
+
++ (void)regenerateShareInstance {
+    NSUserDefaults *extDefaults = [[NSUserDefaults alloc] initWithSuiteName:MJExtentsionAppGroupName];
+    NSString *ruleString = [extDefaults objectForKey:MJExtentsionRuleKey];
+    MJJudgementRule *newInstance = [MJJudgementRule yy_modelWithJSON:ruleString];
+    if (newInstance) {
+        sharedInstance = newInstance;
+    }
 }
 
 + (NSDictionary *)modelContainerPropertyGenericClass {
@@ -70,6 +80,28 @@
         [extDefaults setObject:ruleString forKey:MJExtentsionRuleKey];
     }
     return ruleString != nil;
+}
+
+- (BOOL)backupRuleToIcloud {
+    NSUserDefaults *extDefaults = [[NSUserDefaults alloc] initWithSuiteName:MJExtentsionAppGroupName];
+    NSString *ruleString = [extDefaults objectForKey:MJExtentsionRuleKey];
+    if (ruleString) {
+        NSUbiquitousKeyValueStore *icloudStore = [NSUbiquitousKeyValueStore defaultStore];
+        [icloudStore setString:ruleString forKey:MJExtentsionRuleKey];
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)syncRuleFromIcloud {
+    NSUbiquitousKeyValueStore *icloudStore = [NSUbiquitousKeyValueStore defaultStore];
+    NSString *ruleString = [icloudStore objectForKey:MJExtentsionRuleKey];
+    if (ruleString) {
+        NSUserDefaults *extDefaults = [[NSUserDefaults alloc] initWithSuiteName:MJExtentsionAppGroupName];
+        [extDefaults setObject:ruleString forKey:MJExtentsionRuleKey];
+        return YES;
+    }
+    return NO;
 }
 
 @end

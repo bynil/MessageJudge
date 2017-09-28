@@ -22,8 +22,12 @@ static NSString *MJExtentsionRuleKey = @"MJExtentsionRuleKey";
 @property (nonatomic, strong) NSMutableArray<MJConditionGroup *> *blackConditionGroupList;
 
 + (instancetype)globalRule;
++ (void)regenerateShareInstance;
 
 - (BOOL)isUnwantedMessageForSystemQueryRequest:(ILMessageFilterQueryRequest *)systemRequest;
 - (BOOL)save;
+
+- (BOOL)backupRuleToIcloud;
+- (BOOL)syncRuleFromIcloud;
 
 @end
