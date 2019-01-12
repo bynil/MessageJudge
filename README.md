@@ -1,8 +1,6 @@
 # MessageJudge
 A filter to block unwanted messages on iOS
 
-Available on App Store: [https://itunes.apple.com/app/id1284426780](https://itunes.apple.com/app/id1284426780)
-
 [中文](#中文介绍)
 
 ![usage](https://user-images.githubusercontent.com/3390634/27032166-0e747772-4fa6-11e7-89f5-83ecb82621c0.gif)
